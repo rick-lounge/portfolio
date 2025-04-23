@@ -389,66 +389,111 @@ img {
     text-align: center;
 }
 
+.skills-container {
+    border: 2px solid var(--text-color);
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
 .skills-tabs {
     display: flex;
     justify-content: center;
-    margin-bottom: 2rem;
-    gap: 1rem;
+    border-bottom: 2px solid var(--text-color);
     flex-wrap: wrap;
 }
 
 .tab-button {
+    flex: 1;
     font-family: 'Inter', sans-serif;
     background-color: transparent;
     border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 1.2rem 1.2rem 0 0;
+    padding: 1rem;
     font-weight: 600;
+    font-size: 1rem;
     color: var(--text-color);
-    border-bottom: 3px solid transparent;
+    border-right: 1px solid var(--text-color);
     cursor: pointer;
-    transition: border-color 0.3s;
+}
+
+.tab-button:last-child {
+    border-right: none;
 }
 
 .tab-button.active {
     background-color: var(--accent-color);
-    color: white;
-    border-color: var(--accent-color);
+    color: var(--bg-color)
 }
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(4rem, 1fr));
+    grid-template-columns: repeat(5, 1fr);
     gap: 1.5rem;
-    align-items: center;
-    justify-items: start;
-    border: 2px solid var(--text-color);
-    border-radius: 1rem;
     padding: 2rem;
-    background-color: #fff;
+    background-color: transparent;
+    justify-items: center;
+    min-height: 14rem;
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Hidden state for smooth slide-out */
+.skills-grid.fade-out {
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+/* Hidden state for slide-in */
+.skills-grid.fade-in {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .skill-icon {
-    width: 3.5rem;
-    height: auto;
+    width: 2.5rem;
+    height: 2.5rem;
     transition: transform 0.3s ease;
-    margin-left: 0.5rem;
 }
 
-.skill-icon:hover {
-    transform: scale(1.1);
+.skill-item p {
+    font-size: 0.8rem;
+    color: var(--text-color);
+    font-weight: 500;
+    margin: 0;
 }
 
+  /* Tablet */
 @media (min-width: 48em) {
     .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
+        grid-template-columns: repeat(6, 1fr);
     }
 
     .skill-icon {
-        width: 4rem;
-    }
-
-    .tab-button {
-        font-size: 1rem;
+        width: 3rem;
+        height: 3rem;
     }
 }
+
+  /* Desktop */
+@media (min-width: 64em) {
+    .skills-grid {
+        grid-template-columns: repeat(8, 1fr);
+    }
+
+    .skill-icon {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+    
+    .skill-item:hover .skill-icon {
+        transform: scale(1.1);
+    }
+}
+

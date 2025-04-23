@@ -1,22 +1,33 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const buttons = document.querySelectorAll(".tab-button");
-    const icons = document.querySelectorAll(".skill-icon");
+const tabButtons = document.querySelectorAll('.tab-button');
+const skillsGrid = document.getElementById('skills-grid');
+const allItems = document.querySelectorAll('.skill-item');
 
-    buttons.forEach(btn => {
-        btn.addEventListener("click", () => {
-            const category = btn.dataset.category;
-    
-            // Update active class
-            buttons.forEach(b => b.classList.remove("active"));
-            btn.classList.add("active");
-    
-            icons.forEach(icon => {
-                if (category === "all" || icon.dataset.category === category) {
-                    icon.style.display = "block";
-                } else {
-                    icon.style.display = "none";
-                }
-            });
+tabButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    const category = button.getAttribute('data-category');
+
+    // Update active tab
+    tabButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+
+    // Slide out first
+    skillsGrid.classList.add('fade-out');
+
+    // After fade out transition
+    setTimeout(() => {
+        allItems.forEach(item => {
+            const isMatch = category === 'all' || item.dataset.category === category;
+            item.style.display = isMatch ? 'flex' : 'none';
         });
+
+        // Slide back in
+        skillsGrid.classList.remove('fade-out');
+        skillsGrid.classList.add('fade-in');
+
+        // Remove fade-in after animation completes to reset
+        setTimeout(() => {
+            skillsGrid.classList.remove('fade-in');
+        }, 400); // match transition duration
+        }, 300);
     });
 });
