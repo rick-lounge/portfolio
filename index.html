@@ -6,6 +6,7 @@
     <title>Ricky Dadis Portfolio</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
 </head>
 <body>
     <!-- Fixed Navigation -->
@@ -160,12 +161,57 @@
         </div>
     </section>
     
+<!-- About Section -->
+    <section id="about" class="section about">
+        <h2 class="section-title">About Me</h2>
     
+        <div class="about-wrapper">
+            <div class="about-photo">
+                <img src="images/about/photo-of-me.jpg" alt="Photo of Ricky" />
+            </div>
+            
+            <div class="about-content">
+                <p>Hello! I'm Ricky — a front-end web developer and designer based in BC. I recently graduated from BCIT where I built real-world projects blending code and creativity. I focus on creating responsive, clean, and user-friendly websites using HTML, CSS, JavaScript, React, and WordPress.</p>
+                
+                <p>I've worked on WooCommerce sites, customized themes, and explored the e-commerce side of things too. Outside of coding, I come from a creative background — I'm into photography, video editing, and apprenticing in tattooing. That mix really helps me bring a strong visual eye and personal touch to whatever I build.</p>
+                
+                <p>This site is my space to mix all the things I love — design, development, visuals, and some cat energy 🐾. Thanks for stopping by!</p>
+            </div>
+        </div>
+        
+        <!-- Hobbies collage or slider -->
+        <h3 class="hobby-heading">Other things I love and do!</h3>
+        <div class="hobby-gallery">
+            <div class="hobby-item">
+                <img src="images/about/photography.jpg" alt="Sample photo" />
+                <p>Photography</p>
+            </div>
+            <div class="hobby-item">
+                <img src="images/about/drawing.jpg" alt="Sketches and Tattoo Flashes" />
+                <p>Drawing</p>
+            </div>
+            <div class="hobby-item">
+                <img src="images/about/ricky-cat.jpg" alt="Ricky's cat" />
+                <p>My Cat 🐾</p>
+            </div>
+            <div class="hobby-item">
+                <img src="images/about/snowboarding.jpg" alt="Snowboarding" />
+                <p>Sports</p>
+            </div>
+        </div>
+    </section>
+
+
     <!-- Placeholder for other sections -->
-    <section id="about"></section>
     <section id="contact"></section>
     
     
     <script src="script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
 </body>
 </html>
