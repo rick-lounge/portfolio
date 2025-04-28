@@ -59,10 +59,23 @@ window.addEventListener('scroll', () => {
 // Hamburger toggle
 const hamburger = document.getElementById('hamburger');
 const mainNav = document.querySelector('.main-nav');
+const body = document.body;
 
 hamburger.addEventListener('click', () => {
-  mainNav.classList.toggle('active');
+    mainNav.classList.toggle('active');
+    body.classList.toggle('no-scroll');
 });
+
+// When clicking a nav link (on mobile), close menu and remove no-scroll
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        if (window.innerWidth < 1024) { 
+            mainNav.classList.remove('active');
+            body.classList.remove('no-scroll');
+        }
+    });
+});
+
 
 
 

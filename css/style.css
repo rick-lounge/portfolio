@@ -95,8 +95,13 @@ img {
     font-family: 'Red Hat Display', sans-serif;
     font-weight: 600;
     text-decoration: none;
-    color: var(--text-color);
+    color: var(--accent-hover);
     font-size: 1.5rem;
+}
+
+.nav-link.active {
+    color: var(--text-color);
+    font-weight: 800;
 }
 
 .logo {
@@ -160,6 +165,10 @@ img {
 
 .social-icons img:hover {
     transform: scale(1.1);
+}
+
+.no-scroll {
+    overflow: hidden;
 }
 
 
@@ -759,3 +768,6 @@ img {
   }
   
 
+.no-scroll {
+    overflow: hidden;
+}
