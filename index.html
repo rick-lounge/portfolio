@@ -12,23 +12,25 @@
     <!-- Fixed Navigation -->
     <header class="site-header">
         <div class="nav-container">
-            <img src="images/nav-line.svg" alt="vertical line" class="nav-line top-line" />
+            <div class="hamburger" id="hamburger">
+                <img src="images/hamburger-icon.svg" alt="Menu" />
+            </div>
         
             <nav class="main-nav" aria-label="Primary">
                 <ul class="nav-links">
-                    <li><a href="#home">HOME</a></li>
-                    <li><a href="#projects">PROJECTS</a></li>
-                    <li><a href="#skills">SKILLS</a></li>
-                    <li><a href="#about">ABOUT</a></li>
-                    <li><a href="#contact">CONTACT</a></li>
+                    <li><a href="#home" class="nav-link active"><span class="nav-line"></span>Home</a></li>
+                    <li><a href="#projects" class="nav-link active"><span class="nav-line"></span>Projects</a></li>
+                    <li><a href="#skills" class="nav-link active"><span class="nav-line"></span>Skills</a></li>
+                    <li><a href="#about" class="nav-link active"><span class="nav-line"></span>About</a></li>
+                    <li><a href="#contact" class="nav-link active"><span class="nav-line"></span>Contact</a></li>
                 </ul>
             </nav>
         
-            <!-- Logo -->
-            <div class="logo">
-                <img src="images/logo.svg" alt="Ricky Dadis Logo" />
-            </div>
         </div>
+        <!-- Logo -->
+        <a href="#home" class="logo">
+            <img src="images/logo.svg" alt="Ricky Dadis Logo">
+        </a>        
 </header>
 
 <!-- Social Sidebar -->
@@ -38,13 +40,12 @@
         <a href="https://linkedin.com" target="_blank"><img src="images/contact-icons/linkedin-icon.svg" alt="LinkedIn"></a>
         <a href="mailto:ashenricky22@gmail.com" target="_blank"><img src="images/contact-icons/email-icon.svg" alt="Email"></a>
     </div>
-    <img src="images/social-line.svg" alt="" class="social-line" />
 </div>
 
 <!-- Home Section -->
     <section id="home" class="home-section">
         <div class="home-content">
-        <h1>RICKY<br>DADIS</h1>
+            <h1 class="home-title">RICKY<br>DADIS</h1>
         <p class="tagline">Future Front-End Web Developer</p>
         <a href="#projects" class="scroll-down" aria-label="Scroll to Projects">
             <img src="images/down-arrow.svg" alt="Down Arrow">
@@ -201,9 +202,29 @@
         </div>
     </section>
 
-
-    <!-- Placeholder for other sections -->
-    <section id="contact"></section>
+<!-- Contact Section -->
+<section id="contact" class="section contact">
+    <h2 class="section-title">Let's Connect</h2>
+    
+    <p class="contact-intro">If you're up for working together or just want to say hi, feel free to drop a message!</p>
+  
+    <form class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  
+    <!-- Social sidebar under contact -->
+    <div class="contact-social">
+        <a href="https://github.com/rick-lounge" target="_blank"><img src="images/contact-icons/github-icon.svg" alt="GitHub" /></a>
+        <a href="https://linkedin.com" target="_blank"><img src="images/contact-icons/linkedin-icon.svg" alt="LinkedIn" /></a>
+        <a href="mailto:ashenricky22@gmail.com" target="_blank"><img src="images/contact-icons/email-icon.svg" alt="Email" /></a>
+    </div>
+    
+  </section>
+  
+  
     
     
     <script src="script.js"></script>

@@ -3,7 +3,7 @@ const skillsGrid = document.getElementById('skills-grid');
 const allItems = document.querySelectorAll('.skill-item');
 
 tabButtons.forEach(button => {
-  button.addEventListener('click', () => {
+    button.addEventListener('click', () => {
     const category = button.getAttribute('data-category');
 
     // Update active tab
@@ -31,3 +31,43 @@ tabButtons.forEach(button => {
         }, 300);
     });
 });
+
+
+
+if (contactSocial) {
+  observer.observe(contactSocial);
+}
+
+// navigation menu
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('.nav-link');
+
+window.addEventListener('scroll', () => {
+  let current = "";
+
+  sections.forEach(section => {
+    const sectionTop = section.offsetTop;
+    const sectionHeight = section.offsetHeight;
+    if (pageYOffset >= sectionTop - sectionHeight / 4) {
+      current = section.getAttribute('id');
+    }
+  });
+
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === `#${current}`) {
+      link.classList.add('active');
+    }
+  });
+});
+
+// hamburger menu
+const hamburger = document.getElementById('hamburger');
+const mainNav = document.querySelector('.main-nav');
+
+hamburger.addEventListener('click', () => {
+    mainNav.classList.toggle('active');
+});
+
+
+
