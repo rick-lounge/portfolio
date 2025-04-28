@@ -35,11 +35,12 @@ img {
     left: 0;
     width: 100%;
     display: flex;
-    margin-top: 2rem;
-    margin-left: 2rem;
+    margin-top: 0rem;
+    margin-left: 1rem;
     justify-content: space-between;
-    align-items: center;
-    background: transparent;
+    align-items: left;
+    background: var(--bg-color);
+    padding: 2rem;
     z-index: 1000;
 }
 
@@ -67,21 +68,6 @@ img {
     font-size: 1rem;
 }
 
-.hamburger {
-    display: block;
-    position: fixed;
-    top: 1rem;
-    left: 1rem;
-    cursor: pointer;
-    z-index: 1100;
-}
-
-.hamburger img {
-    width: 3.5rem;
-    height: auto;
-    transition: transform 0.3s ease;
-}
-
 .logo {
     position: fixed;
     top: 1rem;
@@ -106,7 +92,7 @@ img {
 .social-sidebar {
     position: fixed;
     right: 1rem;
-    bottom: 1.5rem;
+    bottom: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
