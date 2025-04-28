@@ -30,9 +30,9 @@
         
         </div>
         <!-- Logo -->
-        <a href="#home" class="logo">
+        <a href="#home" class="logo" data-aos="zoom-in">
             <img src="images/logo.svg" alt="Ricky Dadis Logo">
-        </a>        
+        </a>
 </header>
 
 <!-- Social Sidebar -->
@@ -45,22 +45,25 @@
 </div>
 
 <!-- Home Section -->
-    <section id="home" class="home-section">
+<section id="home" class="home-section" data-aos="fade-zoom-in"
+data-aos-easing="ease-in-back"
+data-aos-delay="300"
+data-aos-offset="0">
         <div class="home-content">
             <h1 class="home-title">RICKY<br>DADIS</h1>
         <p class="tagline">Future Front-End Web Developer</p>
-        <a href="#projects" class="scroll-down" aria-label="Scroll to Projects">
+        <a href="#projects" class="scroll-down" data-aos="fade-up" data-aos-delay="600" aria-label="Scroll to Projects">
             <img src="images/down-arrow.svg" alt="Down Arrow">
         </a>
     </div>
 </section>
 
 <!-- Projects Section -->
-<section id="projects" class="section projects">
+<section id="projects" class="section projects" data-aos="fade-up" data-aos-delay="400">
     <h2 class="section-title">Projects</h2>
 
     <a href="https://rickodes.com/rps-race" class="project-card-link" target="_blank">
-        <div class="project-card">
+        <div class="project-card" data-aos="fade-right" data-aos-delay="400">
             <img src="images/projects/rps-race.png" alt="Rock Paper Scissors Race screenshot" class="project-img" />
             <div class="project-info">
                 <h3 class="project-title">Rock Paper Scissors Race!</h3>
@@ -77,7 +80,7 @@
     </a>
 
     <a href="https://your-other-project-link.com" class="project-card-link" target="_blank">
-        <div class="project-card">
+        <div class="project-card" data-aos="fade-left" data-aos-delay="400">
             <img src="images/projects/movie-database-prototype.png" alt="Movie Database Hi-Fi Prototype screenshot" class="project-img" />
             <div class="project-info">
                 <h3 class="project-title">POPCORNQUEUE - Movie Database Hi-Fi Interactive Prototype</h3>
@@ -95,10 +98,10 @@
     
         
 <!-- Skills Section -->
-<section id="skills" class="section skills">
+<section id="skills" class="section skills" data-aos="fade-up" data-aos-delay="400">
     <h2 class="section-title">Skills</h2>
     
-        <div class="skills-container">
+        <div class="skills-container" data-aos="fade-up" data-aos-delay="400">
         <div class="skills-tabs">
             <button class="tab-button active" data-category="all">All</button>
             <button class="tab-button" data-category="dev">Development</button>
@@ -165,15 +168,15 @@
     </section>
     
 <!-- About Section -->
-    <section id="about" class="section about">
-        <h2 class="section-title">About Me</h2>
+    <section id="about" class="section about" data-aos="fade-up" data-aos-delay="400">
+        <h2 class="section-title" data-aos="fade-up" data-aos-delay="400">About Me</h2>
     
-        <div class="about-wrapper">
+        <div class="about-wrapper" data-aos="fade-right" data-aos-delay="400">
             <div class="about-photo">
                 <img src="images/about/photo-of-me.jpg" alt="Photo of Ricky" />
             </div>
             
-            <div class="about-content">
+            <div class="about-content" data-aos="fade-left" data-aos-delay="400">
                 <p>Hello! I'm Ricky — a front-end web developer and designer based in BC. I recently graduated from BCIT where I built real-world projects blending code and creativity. I focus on creating responsive, clean, and user-friendly websites using HTML, CSS, JavaScript, React, and WordPress.</p>
                 
                 <p>I've worked on WooCommerce sites, customized themes, and explored the e-commerce side of things too. Outside of coding, I come from a creative background — I'm into photography, video editing, and apprenticing in tattooing. That mix really helps me bring a strong visual eye and personal touch to whatever I build.</p>
@@ -183,8 +186,8 @@
         </div>
         
         <!-- Hobbies collage or slider -->
-        <h3 class="hobby-heading">Other things I love and do!</h3>
-        <div class="hobby-gallery">
+        <h3 class="hobby-heading" data-aos="fade-up" data-aos-delay="400">Other things I love and do!</h3>
+        <div class="hobby-gallery" data-aos="fade-up" data-aos-delay="400">
             <div class="hobby-item">
                 <img src="images/about/photography.jpg" alt="Sample photo" />
                 <p>Photography</p>
@@ -204,27 +207,27 @@
         </div>
     </section>
 
-<!-- Contact Section -->
-<section id="contact" class="section contact">
-    <h2 class="section-title">Let's Connect</h2>
-    
-    <p class="contact-intro">If you're up for working together or just want to say hi, feel free to drop a message!</p>
-  
-    <form class="contact-form">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  
-    <!-- Social sidebar under contact -->
-    <div class="contact-social">
-        <a href="https://github.com/rick-lounge" target="_blank"><img src="images/contact-icons/github-icon.svg" alt="GitHub" /></a>
-        <a href="https://linkedin.com" target="_blank"><img src="images/contact-icons/linkedin-icon.svg" alt="LinkedIn" /></a>
-        <a href="mailto:ashenricky22@gmail.com" target="_blank"><img src="images/contact-icons/email-icon.svg" alt="Email" /></a>
-    </div>
-    
-  </section>
+    <!-- Contact Section -->
+    <section id="contact" class="section contact" data-aos="fade-up" data-aos-delay="600">
+        <h2 class="section-title">Let's Connect</h2>
+        
+        <p class="contact-intro">If you're up for working together or just want to say hi, feel free to drop a message!</p>
+        
+            <form class="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="email" name="email" placeholder="Your Email" required />
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+            </form>
+        
+        <!-- Social sidebar under contact -->
+        <div class="contact-social">
+            <a href="https://github.com/rick-lounge" target="_blank"><img src="images/contact-icons/github-icon.svg" alt="GitHub" /></a>
+            <a href="https://linkedin.com" target="_blank"><img src="images/contact-icons/linkedin-icon.svg" alt="LinkedIn" /></a>
+            <a href="mailto:ashenricky22@gmail.com" target="_blank"><img src="images/contact-icons/email-icon.svg" alt="Email" /></a>
+        </div>
+        
+    </section>
   
   
     
