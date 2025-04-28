@@ -56,5 +56,13 @@ window.addEventListener('scroll', () => {
   });
 });
 
+// Hamburger toggle
+const hamburger = document.getElementById('hamburger');
+const mainNav = document.querySelector('.main-nav');
+
+hamburger.addEventListener('click', () => {
+  mainNav.classList.toggle('active');
+});
+
 
 
