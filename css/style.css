@@ -44,28 +44,64 @@ img {
     z-index: 1000;
 }
 
+/* Hamburger Button Style */
+.hamburger {
+    display: block;
+    position: fixed;
+    top: 0.5rem;
+    left: 1rem;
+    z-index: 1100;
+    cursor: pointer;
+}
+
+.hamburger img {
+    width: 3.5rem;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
 .main-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100vh;
     width: 100%;
+    background-color: var(--bg-color);
+    display: flex;
+    padding-top: 4rem;
+    flex-direction: column;
+    align-items: center;
+    transition: left 0.3s ease;
+    z-index: 1000;
+    border: 1px;
+}
+
+.main-nav.active {
+    left: 0;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 1.5rem;
-    margin: 0;
-    padding: 0;
+    flex-direction: column;
+    width: 100%;
+    gap: 2.5rem;
+    text-align: center;
+    
 }
 
 
 .nav-links a {
     font-family: 'Red Hat Display', sans-serif;
-    font-weight: 800;
+    font-weight: 600;
     text-decoration: none;
+    color: var(--accent-hover);
+    font-size: 1.5rem;
+}
+
+.nav-link.active {
     color: var(--text-color);
-    font-size: 1rem;
+    font-weight: 800;
 }
 
 .logo {
@@ -131,6 +167,10 @@ img {
     transform: scale(1.1);
 }
 
+.no-scroll {
+    overflow: hidden;
+}
+
 
 
 @media (min-width: 64em) {
@@ -155,6 +195,11 @@ img {
         top: 0rem;
         left: 0rem;
         margin: 0;
+        background: transparent;
+    }
+
+    .hamburger {
+        display: none;
     }
 
     .nav-container {
@@ -169,8 +214,14 @@ img {
     }
 
     .main-nav {
-        display: flex;
+        position: fixed;
+        top: 50%;
+        left: 0.5rem;
+        transform: translateY(-50%);
+        height: auto;
+        width: auto;
         flex-direction: column;
+        gap: 1.5rem;
     }
 
     .nav-links {
@@ -717,3 +768,6 @@ img {
   }
   
 
+.no-scroll {
+    overflow: hidden;
+}
