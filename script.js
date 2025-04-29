@@ -76,6 +76,44 @@ navLinks.forEach(link => {
     });
 });
 
+// Cursor
+const cursor = document.querySelector('.cursor');
+const follower = document.querySelector('.cursor-follower');
+
+let posX = 0, posY = 0;
+let mouseX = 0, mouseY = 0;
+
+gsap.to({}, 0.016, {
+    repeat: -1,
+    onRepeat: function() {
+        posX += (mouseX - posX) / 9;
+        posY += (mouseY - posY) / 9;
+
+        gsap.set(follower, {
+            css: {
+                left: posX,
+                top: posY
+            }
+        });
+
+        gsap.set(cursor, {
+            css: {
+                left: mouseX,
+                top: mouseY
+            }
+        });
+    }
+});
+
+document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+});
+
+
+
+
+
 
 
 

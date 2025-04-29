@@ -4,7 +4,7 @@
 
 :root {
     --bg-color: #DAD1C1;
-    --text-color: #621627;
+    --text-color: #4b101d;
     --accent-color: #601d2c;
     --accent-hover: #8E6266;
 }
@@ -15,12 +15,41 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Grainy Effect Overlay */
+.grainy-bg {
+    pointer-events: none;
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    width: 200vw;
+    height: 200vh;
+    z-index: 1000;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    background-size: 300px 300px;
+    opacity: 0.25;
+    animation: grainMove 2s steps(2, end) infinite;
+}
+
+@keyframes grainMove {
+    0% { transform: translate(0, 0); }
+    10% { transform: translate(-1%, -1%); }
+    20% { transform: translate(-2%, 1%); }
+    30% { transform: translate(1%, -2%); }
+    40% { transform: translate(2%, 2%); }
+    50% { transform: translate(-1%, -1%); }
+    60% { transform: translate(1%, 2%); }
+    70% { transform: translate(2%, 1%); }
+    80% { transform: translate(-2%, 2%); }
+    90% { transform: translate(1%, -2%); }
+    100% { transform: translate(0, 0); }
+}
 body {
     margin: 0;
     padding: 0;
     font-family: 'Red Hat Display', sans-serif;
+    font-weight: 500;
     background-color: var(--bg-color);
-    color: var(--text-color)
+    color: var(--text-color);
 }
 
 img {
@@ -151,12 +180,14 @@ img {
     height: 1.25rem;
 }
 
+
 .social-icons {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1.3rem;
 }
+
 
 .social-icons img {
     width: 1.2rem; 
@@ -326,6 +357,23 @@ img {
     margin-top: 1rem;
     font-family: 'Red Hat Display', sans-serif;
 }
+
+@keyframes slideUpDown {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(15px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.scroll-down img {
+    animation: slideUpDown 2s ease-in-out infinite;
+}
+
 
 .scroll-down {
     display: block;
@@ -710,24 +758,24 @@ img {
     text-align: center;
     padding: 4rem 1.5rem;
     background-color: var(--bg-color);
-  }
-  
-  .contact-intro {
+}
+
+.contact-intro {
     font-size: 1rem;
     margin-bottom: 2rem;
     color: var(--text-color);
-  }
-  
-  .contact-form {
+}
+
+.contact-form {
     display: flex;
     flex-direction: column;
     max-width: 500px;
     margin: 0 auto 2rem;
     gap: 1rem;
-  }
-  
-  .contact-form input,
-  .contact-form textarea {
+}
+
+.contact-form input,
+.contact-form textarea {
     padding: 1rem;
     border: 1px solid #aaa;
     border-radius: 0.5rem;
@@ -735,9 +783,9 @@ img {
     font-family: 'Red Hat Display', sans-serif;
     font-weight: 400;
     font-style: regular;
-  }
-  
-  .contact-form button {
+}
+
+.contact-form button {
     padding: 1rem;
     border: none;
     background-color: var(--accent-color);
@@ -746,30 +794,33 @@ img {
     border-radius: 0.5rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
-  }
-  
-  .contact-form button:hover {
+}
+
+.contact-form button:hover {
     background-color: var(--accent-hover);
-  }
-  
-  .contact-social {
+}
+
+.contact-social {
     display: flex;
     justify-content: center;
     gap: 2rem;
     margin-top: 2rem;
-  }
-  
-  .contact-social img {
+}
+
+.contact-social img {
     width: 1.8rem;
     height: 1.8rem;
     transition: transform 0.2s ease;
-  }
-  
-  .contact-social img:hover {
+}
+
+.contact-social img:hover {
     transform: scale(1.1);
-  }
-  
+}
+
 
 .no-scroll {
     overflow: hidden;
 }
+
+
+
