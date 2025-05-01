@@ -59,70 +59,53 @@
     </section>
 
 <!-- Projects Section -->
-<section id="projects" class="section projects" data-aos="fade-up" data-aos-delay="400">
-  <h2 class="section-title">Projects</h2>
-
-  <!-- Project Card -->
-  <div class="project-card">
-    <div class="project-media">
-      <a href="https://rickodes.com/rps-race" class="project-image-link" target="_blank">
-        <img src="images/projects/rps-race.png" alt="Rock Paper Scissors Race screenshot" class="project-img" />
-        <div class="image-overlay">Visit Site</div>
-      </a>
-    </div>
-
-    <div class="project-slider">
-      <h3 class="project-title">Rock Paper Scissors Race!</h3>
-
-      <div class="slider-content">
-        <div class="slide active">
-          <p class="project-description">
-            A browser-based game built with HTML, CSS, and JavaScript. Features DOM manipulation, scoring,
-            event handling, and custom animations to create an engaging race-style twist on the classic game.
-          </p>
-        </div>
-
-        <div class="slide">
-          <div class="tech-icons">
-            <div class="tech-item">
-              <img src="images/tools-icons/html-icon.svg" alt="HTML5" />
-              <p>HTML5</p>
-            </div>
-            <div class="tech-item">
-              <img src="images/tools-icons/css-icon.svg" alt="CSS3" />
-              <p>CSS3</p>
-            </div>
-            <div class="tech-item">
-              <img src="images/tools-icons/js-icon.svg" alt="JavaScript" />
-              <p>JavaScript</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="slide">
-          <p class="project-description">
-            This project helped me understand DOM manipulation and basic game logic. It was a good challenge in
-            JavaScript conditionals and animations.
-          </p>
-        </div>
-      </div>
-
-      <div class="slider-controls">
-        <button class="slider-prev">&#8592;</button>
-        <button class="slider-next">&#8594;</button>
-      </div>
-      <div class="slider-dots">
-        <span class="dot active"></span>
-        <span class="dot"></span>
-        <span class="dot"></span>
-      </div>
-    </div>
-  </div>
-</section>
-
+    <section id="projects" class="section projects" data-aos="fade-up" data-aos-delay="400">
+        <h2 class="section-title">Projects</h2>
     
-
-
+        <a href="https://rickodes.com/rps-race" class="project-card-link" target="_blank">
+        <div class="project-card" data-aos="fade-right" data-aos-delay="400">
+            <img src="images/projects/rps-race.png" alt="Rock Paper Scissors Race screenshot" class="project-img" />
+            <div class="project-info">
+            <h3 class="project-title">Rock Paper Scissors Race!</h3>
+            <p class="project-description">
+                A browser-based game built with HTML, CSS, and JavaScript. Features DOM manipulation, scoring, event handling, and custom animations to create an engaging race-style twist on the classic game.
+            </p>
+            <div class="tech-icons">
+                <div class="tech-item">
+                <img src="images/tools-icons/html-icon.svg" alt="HTML5" />
+                <p>HTML5</p>
+                </div>
+                <div class="tech-item">
+                <img src="images/tools-icons/css-icon.svg" alt="CSS3" />
+                <p>CSS3</p>
+                </div>
+                <div class="tech-item">
+                <img src="images/tools-icons/js-icon.svg" alt="JavaScript" />
+                <p>JavaScript</p>
+                </div>
+            </div>
+            </div>
+        </div>
+        </a>
+    
+        <a href="https://xd.adobe.com/view/f0305d5e-4924-4879-9f8b-9b5dd892e052-a563/" class="project-card-link" target="_blank">
+        <div class="project-card" data-aos="fade-left" data-aos-delay="400">
+            <img src="images/projects/movie-database-prototype.png" alt="Movie Database Hi-Fi Prototype screenshot" class="project-img" />
+            <div class="project-info">
+            <h3 class="project-title">POPCORNQUEUE - Movie Database Hi-Fi Interactive Prototype</h3>
+            <p class="project-description">
+                Collaborated and designed a hi-fi clickable prototype using Adobe XD. Applied user-centered design principles and consistent UX flow. Used responsive layout techniques for mobile and desktop views.
+            </p>
+            <div class="tech-icons">
+                <div class="tech-item">
+                    <img src="images/tools-icons/adobe-xd-icon.svg" alt="Adobe XD" />
+                    <p>Adobe XD</p>
+                </div>
+            </div>
+            </div>
+        </div>
+        </a>
+    </section>
 
 <!-- Skills Section -->
 <section id="skills" class="section skills" data-aos="fade-up" data-aos-delay="400">
@@ -214,6 +197,18 @@
     
     <!-- Hobbies collage or slider -->
     <h3 class="hobby-heading" data-aos="fade-up" data-aos-delay="400">Other things I love and do!</h3>
+    <div class="hobby-descriptions" data-aos="fade-up" data-aos-delay="400">
+        <ul>
+            <li><strong>Photography 📸</strong> — I love capturing cinematic photos of anything I find beautiful—even random everyday moments. There's something about making the ordinary look magical through a lens.</li>
+            
+            <li><strong>Drawing ✒️</strong> — Most of my sketches are tattoo-inspired. I enjoy creating flash designs and just zoning out with a pencil and blank page—it's like visual journaling for me.</li>
+            
+            <li><strong>My Cat 🐾</strong> — She's my first cat ever and honestly my little spirit animal. She has a whole personality and weirdly always senses when I need company or comfort.</li>
+            
+            <li><strong>Sports ⚽️🏉</strong> — I'm into anything active and love trying out new sports. I mostly play soccer and touch rugby, but I'm down to try anything as long as it gets me moving.</li>
+        </ul>
+    </div>
+    
     <div class="hobby-gallery" data-aos="fade-up" data-aos-delay="400">
         <div class="hobby-item">
             <img src="images/about/photography.jpg" alt="Sample photo" />
@@ -240,10 +235,11 @@
     
     <p class="contact-intro">If you're up for working together or just want to say hi, feel free to drop a message!</p>
     
-    <form class="contact-form">
+    <form id="contact-form" class="contact-form" action="https://formspree.io/f/mzzrdqld" method="POST">
         <input type="text" name="name" placeholder="Your Name" required />
         <input type="email" name="email" placeholder="Your Email" required />
         <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <input type="hidden" name="_captcha" value="false">
         <button type="submit">Send Message</button>
     </form>
     
@@ -253,7 +249,6 @@
         <a href="https://linkedin.com" target="_blank"><img src="images/contact-icons/linkedin-icon.svg" alt="LinkedIn" /></a>
         <a href="mailto:ashenricky22@gmail.com" target="_blank"><img src="images/contact-icons/email-icon.svg" alt="Email" /></a>
     </div>
-    
 </section>
 
 <!-- Grain Overlay -->
