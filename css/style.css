@@ -460,6 +460,7 @@ img {
     width: 100%;
     border-radius: 1.2rem;
     margin-bottom: 1.5rem;
+    aspect-ratio: 3 / 2;
 }
 
 .project-title {
