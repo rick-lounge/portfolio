@@ -467,6 +467,7 @@ img {
     font-family: 'Playfair Display', serif;
     font-size: 1.4rem;
     color: var(--text-color);
+    text-align: center;
     margin-bottom: 0.5rem;
 }
 
@@ -514,6 +515,10 @@ img {
 @media (min-width: 64em) {
     .section-title {
         font-size: 3rem;
+    }
+
+    .project-title {
+        text-align: left;
     }
     
     .project-card {
