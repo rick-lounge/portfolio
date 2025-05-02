@@ -67,7 +67,6 @@ img {
     margin-top: 0rem;
     margin-left: 1rem;
     justify-content: space-between;
-    align-items: left;
     background: var(--bg-color);
     padding: 2rem;
     z-index: 1000;
@@ -461,6 +460,7 @@ img {
     width: 100%;
     border-radius: 1.2rem;
     margin-bottom: 1.5rem;
+    aspect-ratio: 3 / 2;
 }
 
 .project-title {
@@ -822,7 +822,6 @@ img {
     font-size: 1rem;
     font-family: 'Red Hat Display', sans-serif;
     font-weight: 400;
-    font-style: regular;
 }
 
 .contact-form button {
