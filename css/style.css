@@ -868,5 +868,12 @@ img {
     overflow: hidden;
 }
 
+.project-card-link,
+.tab-button,
+button,
+a {
+    cursor: pointer;
+}
+
 
 
