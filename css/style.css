@@ -4,7 +4,7 @@
 
 :root {
     --bg-color: #DAD1C1;
-    --text-color: #4b101d;
+    --text-color: #151a1d;
     --accent-color: #601d2c;
     --accent-hover: #8E6266;
 }
@@ -15,42 +15,17 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Grainy Effect Overlay */
-.grainy-bg {
-    pointer-events: none;
-    position: fixed;
-    top: -50%;
-    left: -50%;
-    width: 200vw;
-    height: 200vh;
-    z-index: 1000;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    background-size: 300px 300px;
-    opacity: 0.25;
-    animation: grainMove 2s steps(2, end) infinite;
-}
-
-@keyframes grainMove {
-    0% { transform: translate(0, 0); }
-    10% { transform: translate(-1%, -1%); }
-    20% { transform: translate(-2%, 1%); }
-    30% { transform: translate(1%, -2%); }
-    40% { transform: translate(2%, 2%); }
-    50% { transform: translate(-1%, -1%); }
-    60% { transform: translate(1%, 2%); }
-    70% { transform: translate(2%, 1%); }
-    80% { transform: translate(-2%, 2%); }
-    90% { transform: translate(1%, -2%); }
-    100% { transform: translate(0, 0); }
-}
 body {
     margin: 0;
     padding: 0;
     font-family: 'Red Hat Display', sans-serif;
     font-weight: 500;
     background-color: var(--bg-color);
+    background-image: url("https://www.transparenttextures.com/patterns/egg-shell.png");
     color: var(--text-color);
 }
+
+
 
 img {
     max-width: 100%;
@@ -67,7 +42,8 @@ img {
     margin-top: 0rem;
     margin-left: 1rem;
     justify-content: space-between;
-    background: var(--bg-color);
+    background-color: var(--bg-color);
+    background-image: url("https://www.transparenttextures.com/patterns/egg-shell.png");
     padding: 2rem;
     z-index: 1000;
 }
@@ -95,6 +71,7 @@ img {
     height: 100vh;
     width: 100%;
     background-color: var(--bg-color);
+    background-image: url("https://www.transparenttextures.com/patterns/egg-shell.png");
     display: flex;
     padding-top: 4rem;
     flex-direction: column;
@@ -121,16 +98,16 @@ img {
 
 
 .nav-links a {
-    font-family: 'Red Hat Display', sans-serif;
-    font-weight: 600;
+    font-family: 'Playfair Display', serif;
+    font-weight: 100;
     text-decoration: none;
-    color: var(--accent-hover);
+    color: #151a1d43;
     font-size: 1.5rem;
 }
 
 .nav-link.active {
     color: var(--text-color);
-    font-weight: 800;
+    font-weight: 500;
 }
 
 .logo {
@@ -209,7 +186,7 @@ img {
         display: block;
         width: 4px;
         height: 1.5rem;
-        background-color: #8E6266;
+        background-color: #151a1d43;
         border-radius: 10px;
         margin-right: 0.5rem;
         transition: background-color 0.3s ease, height 0.3s ease;
@@ -268,16 +245,17 @@ img {
     .nav-links a {
         display: flex;
         align-items: center;
-        font-family: 'Red Hat Display', sans-serif;
-        font-weight: 700;
+        font-family: 'Playfair Display', serif;
+        font-weight: 500;
         font-size: 1.1rem;
         text-decoration: none;
-        color: #8E6266;
+        color: #151a1da4;
         transition: all 0.3s ease;
     }
 
     .nav-link.active {
         color: var(--text-color);
+        font-weight: 700;
     }
 
     .nav-link.active .nav-line {
@@ -325,7 +303,7 @@ img {
 }
 
 /* Home Section */
-.home-section {
+.home {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -405,7 +383,6 @@ img {
 /* Projects Section */
 .projects {
     padding: 3rem 1.5rem;
-    background-color: var(--bg-color);
     text-align: left;
 }
 
@@ -568,7 +545,6 @@ img {
 /* Skills Section */
 .skills {
     padding: 3rem 1.5rem;
-    background-color: var(--bg-color);
     text-align: center;
 }
 
@@ -700,7 +676,6 @@ img {
 
 /* ABOUT SECTION */
 .about {
-    background-color: var(--bg-color);
     padding: 4rem 1.5rem;
 }
 .about h2 {
@@ -814,7 +789,6 @@ img {
 .contact {
     text-align: center;
     padding: 4rem 1.5rem;
-    background-color: var(--bg-color);
 }
 
 .contact-intro {
@@ -892,6 +866,3 @@ button,
 a {
     cursor: pointer;
 }
-
-
-
