@@ -109,13 +109,3 @@ document.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
 });
-
-
-    
-
-
-
-
-
-
-
