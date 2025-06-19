@@ -12,7 +12,10 @@
 
 html {
     font-size: 100%; 
+    scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+    overscroll-behavior-y: contain;
 }
 
 body {
@@ -296,6 +299,8 @@ img {
 /* Section Layout */
 .section {
     margin: 3rem 1.5rem;
+    scroll-snap-align: start;
+    min-height: 100vh;
 }
 
 @media (min-width: 48em) {
@@ -886,3 +891,8 @@ button,
 a {
     cursor: pointer;
 }
+
+.snap-wrapper {
+    scroll-snap-type: y mandatory;
+}
+
