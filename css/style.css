@@ -416,6 +416,7 @@ img {
 
     .scroll-down {
         margin-top: 0;
+        width: 3rem;
     }
 }
 
@@ -434,12 +435,18 @@ img {
         font-size: 5.5rem;
         line-height: 1.25;
     }
+
     .tagline {
         font-size: 1.8rem;
     }
     
     .home-art img {
         max-width: 300px;
+    }
+
+    .scroll-down {
+        margin-top: 0;
+        width: 4rem;
     }
 }
 
