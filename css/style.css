@@ -5,8 +5,8 @@
 :root {
     --bg-color: #DAD1C1;
     --text-color: #151a1d;
-    --accent-color: #1b1e4e;
-    --accent-hover: #1b1e4e8f;
+    --accent-color: #0b556e;
+    --accent-hover: #0b556e7e;
 }
 
 
@@ -18,6 +18,8 @@ html {
     overscroll-behavior-y: contain;
 }
 
+
+
 body {
     margin: 0;
     padding: 0;
@@ -27,8 +29,6 @@ body {
     background-image: url("https://www.transparenttextures.com/patterns/egg-shell.png");
     color: var(--text-color);
 }
-
-
 
 img {
     max-width: 100%;
