@@ -1,12 +1,13 @@
 /* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 
 
 :root {
-    --bg-color: #DAD1C1;
+    --bg-color: #D5CCC5;
     --text-color: #151a1d;
-    --accent-color: #0b556e;
-    --accent-hover: #0b556e7e;
+    --accent-color: #730E02;
+    --accent-hover: #730d0252;
 }
 
 
@@ -23,8 +24,8 @@ html {
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Red Hat Display', serif;
-    font-weight: 500;
+    font-family: 'Space Mono', monospace;
+    font-weight: 400;
     background-color: var(--bg-color);
     background-image: url("https://www.transparenttextures.com/patterns/egg-shell.png");
     color: var(--text-color);
@@ -101,7 +102,7 @@ img {
 
 
 .nav-links a {
-    font-family: 'big-caslon-fb', serif;
+    font-family: 'Caveat', cursive;
     font-weight: 500;
     font-style: italic;
     text-decoration: none;
@@ -122,10 +123,9 @@ img {
 }
 
 .logo img {
-    height: 2.5rem;
+    height: 3rem;
     width: auto;
     object-fit: contain;
-    transition: height 0.3s ease;
 }
 
 .nav-line {
@@ -214,6 +214,11 @@ img {
         display: none;
     }
 
+    .logo img {
+        height: 4rem;
+        width: auto;
+    }
+    
     .nav-container {
         position: fixed;
         top: 50%;
@@ -249,10 +254,10 @@ img {
     .nav-links a {
         display: flex;
         align-items: center;
-        font-family: 'big-caslon-fb', serif;
+        font-family: 'Caveat', cursive;
         font-weight: 500;
-        font-style: italic;
-        font-size: 1.3rem;
+        font-style: normal;
+        font-size: 1.6rem;
         text-decoration: none;
         color: var(--accent-hover);
         transition: all 0.3s ease;
@@ -337,21 +342,21 @@ img {
 }
 
 .home-title {
-    font-family: 'big-caslon-fb', serif;
-    font-style: italic;
+    font-family: 'Caveat', cursive;
+    font-style: normal;
     font-weight: 500;
     font-size: 2.5rem;
     line-height: 1.2;
     margin: 0;
+    color: var(--accent-color);
 }
 
 .tagline {
     font-size: 1rem;
     margin-top: 1rem;
-    font-family: 'big-caslon-fb', serif;
+    font-family: 'Caveat', cursive;
     font-weight: 700;
-    font-style: italic;
-    color: var(--accent-color);
+    font-style: normal;
 }
 
 .scroll-down {
@@ -461,9 +466,9 @@ img {
 }
 
 .section-title {
-    font-family: 'big-caslon-fb', serif;
+    font-family: 'Caveat', cursive;
     font-weight: 500;
-    font-style: italic;
+    font-style: normal;
     font-size: 2rem;
     margin-bottom: 2rem;
     color: var(--accent-color);
@@ -512,10 +517,10 @@ img {
 }
 
 .project-title {
-    font-family: 'big-caslon-fb', serif;
+    font-family: 'Caveat', cursive;
     font-weight: 500;
-    font-style: italic;
-    font-size: 1.4rem;
+    font-style: normal;
+    font-size: 1.7rem;
     color: var(--text-color);
     text-align: center;
     margin-bottom: 0.5rem;
@@ -523,7 +528,7 @@ img {
 
 .project-description {
     font-size: 1rem;
-    font-family: "Red Hat Display", serif;
+    font-family: "Space Mono", monospace;
     color: var(--text-color);
     line-height: 1.6;
     margin-bottom: 1rem;
@@ -637,14 +642,14 @@ img {
 
 .tab-button {
     flex: 1;
-    font-family: 'big-caslon-fb', serif;
+    font-family: 'Caveat', cursive;
     font-weight: 500;
-    font-style: italic;
+    font-style: normal;
     background-color: transparent;
     border: none;
     padding: 1rem;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 1.3rem;
     color: var(--accent-color);
     border-right: 1px solid var(--text-color);
     cursor: pointer;
@@ -777,7 +782,7 @@ img {
 
 .about-content p {
     font-size: 1rem;
-    font-family: 'Red Hat Display', sans-serif;
+    font-family: 'Space Mono', monospace;
     color: var(--text-color);
     line-height: 1.6;
     margin-bottom: 1.2rem;
@@ -785,9 +790,9 @@ img {
 
 .hobby-heading {
     font-size: 1.5rem;
-    font-family: 'big-caslon-fb', serif;
+    font-family: 'Caveat', cursive;
     font-weight: 600;
-    font-style: italic;
+    font-style: normal;
     text-align: center;
     color: var(--accent-color);
     margin: 3rem auto 1.5rem;
@@ -823,7 +828,7 @@ img {
     max-width: 900px;
     margin: 2rem auto 0;
     font-size: 1rem;
-    font-family: 'Red Hat Display', sans-serif;
+    font-family: 'Space Mono', monospace;
     color: var(--text-color);
     line-height: 1.7;
 }
@@ -839,9 +844,10 @@ img {
 }
 
 strong {
-    font-family: 'big-caslon-fb', serif;
+    font-family: 'Caveat', cursive;
     font-weight: 600;
-    font-style: italic;
+    font-style: normal;
+    font-size: 1.3rem;
     color: var(--accent-color);
 }
 
@@ -896,7 +902,7 @@ strong {
     border: 1px solid #aaa;
     border-radius: 0.5rem;
     font-size: 1rem;
-    font-family: 'Red Hat Display', sans-serif;
+    font-family: 'Space Mono', monospace;
     font-weight: 400;
 }
 
