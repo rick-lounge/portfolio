@@ -76,3 +76,93 @@ navLinks.forEach(link => {
     });
 });
 
+// --- SLIDER FUNCTIONALITY WITH DOTS + SWIPE + BLUR ---
+
+const sliderTrack = document.querySelector('.slider-track');
+const slides = document.querySelectorAll('.project-slide');
+const prevBtn = document.querySelector('.slider-arrow.left');
+const nextBtn = document.querySelector('.slider-arrow.right');
+
+// Create dot container and append to .projects-slider
+const dotContainer = document.querySelector('.slider-dots');
+dotContainer.classList.add('slider-dots');
+document.querySelector('.projects-slider').appendChild(dotContainer);
+
+// Track the current index
+let currentSlide = 0;
+
+// Create nav dots
+slides.forEach((_, index) => {
+	const dot = document.createElement('span');
+	dot.classList.add('dot');
+	if (index === 0) dot.classList.add('active');
+	dot.addEventListener('click', () => {
+		currentSlide = index;
+		updateSlider();
+	});
+	dotContainer.appendChild(dot);
+});
+
+function updateSlider() {
+  // Add blur to each slide temporarily
+  slides.forEach(slide => slide.classList.add('motion-blur'));
+  setTimeout(() => {
+    slides.forEach(slide => slide.classList.remove('motion-blur'));
+  }, 300);
+
+	// Update position
+	const offset = -currentSlide * 100;
+	sliderTrack.style.transform = `translateX(${offset}%)`;
+
+	// Update dots
+	document.querySelectorAll('.dot').forEach((dot, i) => {
+		dot.classList.toggle('active', i === currentSlide);
+	});
+}
+
+prevBtn.addEventListener('click', () => {
+	currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+	updateSlider();
+});
+
+nextBtn.addEventListener('click', () => {
+	currentSlide = (currentSlide + 1) % slides.length;
+	updateSlider();
+});
+
+// Swipe support
+let startX = 0;
+let isDragging = false;
+
+sliderTrack.addEventListener('mousedown', (e) => {
+	isDragging = true;
+	startX = e.pageX;
+});
+
+sliderTrack.addEventListener('mouseup', (e) => {
+	if (!isDragging) return;
+	const deltaX = e.pageX - startX;
+	handleSwipe(deltaX);
+	isDragging = false;
+});
+
+sliderTrack.addEventListener('touchstart', (e) => {
+	startX = e.touches[0].clientX;
+}, { passive: true });
+
+sliderTrack.addEventListener('touchend', (e) => {
+	const deltaX = e.changedTouches[0].clientX - startX;
+	handleSwipe(deltaX);
+});
+
+function handleSwipe(deltaX) {
+	if (Math.abs(deltaX) > 50) {
+		if (deltaX > 0) {
+			currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+		} else {
+			currentSlide = (currentSlide + 1) % slides.length;
+		}
+		updateSlider();
+	}
+}
+
