@@ -76,36 +76,93 @@ navLinks.forEach(link => {
     });
 });
 
-// Cursor
-const cursor = document.querySelector('.cursor');
-const follower = document.querySelector('.cursor-follower');
+// --- SLIDER FUNCTIONALITY WITH DOTS + SWIPE + BLUR ---
 
-let posX = 0, posY = 0;
-let mouseX = 0, mouseY = 0;
+const sliderTrack = document.querySelector('.slider-track');
+const slides = document.querySelectorAll('.project-slide');
+const prevBtn = document.querySelector('.slider-arrow.left');
+const nextBtn = document.querySelector('.slider-arrow.right');
 
-gsap.to({}, 0.016, {
-    repeat: -1,
-    onRepeat: function() {
-        posX += (mouseX - posX) / 9;
-        posY += (mouseY - posY) / 9;
+// Create dot container and append to .projects-slider
+const dotContainer = document.querySelector('.slider-dots');
+dotContainer.classList.add('slider-dots');
+document.querySelector('.projects-slider').appendChild(dotContainer);
 
-        gsap.set(follower, {
-            css: {
-                left: posX,
-                top: posY
-            }
-        });
+// Track the current index
+let currentSlide = 0;
 
-        gsap.set(cursor, {
-            css: {
-                left: mouseX,
-                top: mouseY
-            }
-        });
-    }
+// Create nav dots
+slides.forEach((_, index) => {
+	const dot = document.createElement('span');
+	dot.classList.add('dot');
+	if (index === 0) dot.classList.add('active');
+	dot.addEventListener('click', () => {
+		currentSlide = index;
+		updateSlider();
+	});
+	dotContainer.appendChild(dot);
 });
 
-document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
+function updateSlider() {
+  // Add blur to each slide temporarily
+  slides.forEach(slide => slide.classList.add('motion-blur'));
+  setTimeout(() => {
+    slides.forEach(slide => slide.classList.remove('motion-blur'));
+  }, 300);
+
+	// Update position
+	const offset = -currentSlide * 100;
+	sliderTrack.style.transform = `translateX(${offset}%)`;
+
+	// Update dots
+	document.querySelectorAll('.dot').forEach((dot, i) => {
+		dot.classList.toggle('active', i === currentSlide);
+	});
+}
+
+prevBtn.addEventListener('click', () => {
+	currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+	updateSlider();
 });
+
+nextBtn.addEventListener('click', () => {
+	currentSlide = (currentSlide + 1) % slides.length;
+	updateSlider();
+});
+
+// Swipe support
+let startX = 0;
+let isDragging = false;
+
+sliderTrack.addEventListener('mousedown', (e) => {
+	isDragging = true;
+	startX = e.pageX;
+});
+
+sliderTrack.addEventListener('mouseup', (e) => {
+	if (!isDragging) return;
+	const deltaX = e.pageX - startX;
+	handleSwipe(deltaX);
+	isDragging = false;
+});
+
+sliderTrack.addEventListener('touchstart', (e) => {
+	startX = e.touches[0].clientX;
+}, { passive: true });
+
+sliderTrack.addEventListener('touchend', (e) => {
+	const deltaX = e.changedTouches[0].clientX - startX;
+	handleSwipe(deltaX);
+});
+
+function handleSwipe(deltaX) {
+	if (Math.abs(deltaX) > 50) {
+		if (deltaX > 0) {
+			currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+		} else {
+			currentSlide = (currentSlide + 1) % slides.length;
+		}
+		updateSlider();
+	}
+}
+
