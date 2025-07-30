@@ -36,6 +36,21 @@ img {
     display: block;
 }
 
+.cursor-follower {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #730d0252;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    transition: transform 0.1s ease;
+}
+
+
 /* Header Navigation */
 .site-header {
     position: fixed;

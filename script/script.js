@@ -166,3 +166,11 @@ function handleSwipe(deltaX) {
 	}
 }
 
+// cursor
+const follower = document.querySelector('.cursor-follower');
+
+window.addEventListener('mousemove', e => {
+  follower.style.top = `${e.clientY}px`;
+  follower.style.left = `${e.clientX}px`;
+});
+
