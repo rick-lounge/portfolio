@@ -497,6 +497,7 @@ img {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     padding: 2rem;
     background-color: var(--bg-color);
+    background-image: url("https://www.transparenttextures.com/patterns/egg-shell.png");
 }
 
 .slider-container::before,
@@ -509,16 +510,21 @@ img {
     z-index: 10;
     pointer-events: none;
     backdrop-filter: blur(8px);
+    
 }
 
 .slider-container::before {
     left: 0;
     background: linear-gradient(to right, var(--bg-color) 0%, transparent 90%);
+    background-color: var(--bg-color);
+    background-image: url("https://www.transparenttextures.com/patterns/egg-shell.png");
 }
 
 .slider-container::after {
     right: 0;
     background: linear-gradient(to left, var(--bg-color) 0%, transparent 90%);
+    background-color: var(--bg-color);
+    background-image: url("https://www.transparenttextures.com/patterns/egg-shell.png");
 }
 
 .slider-track {
