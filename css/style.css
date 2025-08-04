@@ -17,6 +17,7 @@ html {
     scroll-behavior: smooth;
     scroll-padding-top: 100px;
     overscroll-behavior-y: contain;
+    overflow-x: hidden;
 }
 
 
@@ -29,6 +30,7 @@ body {
     background-color: var(--bg-color);
     background-image: url("https://www.transparenttextures.com/patterns/egg-shell.png");
     color: var(--text-color);
+    overflow-x: hidden;
 }
 
 img {
@@ -48,6 +50,13 @@ img {
     transform: translate(-50%, -50%);
     z-index: 9999;
     transition: transform 0.1s ease;
+}
+
+/* Disable cursor follower for smaller screens */
+@media (max-width: 768px) {
+    .cursor-follower {
+        display: none;
+    }
 }
 
 
@@ -153,7 +162,7 @@ img {
 .social-sidebar {
     position: fixed;
     right: 1rem;
-    bottom: 1rem;
+    bottom: 4rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -161,12 +170,6 @@ img {
     z-index: 1000;
     opacity: 1;
     transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.hide-sidebar {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 
@@ -198,7 +201,13 @@ img {
     overflow: hidden;
 }
 
-
+@media (min-width: 37.5em) {
+    .social-sidebar {
+        position: fixed;
+        right: 1rem;
+        bottom: 1rem;
+    }
+}
 
 @media (min-width: 64em) {
     .nav-line {
@@ -319,7 +328,7 @@ img {
 /* Section Layout */
 .section {
     margin: 3rem 1.5rem;
-    scroll-snap-align: start;
+    scroll-snap-align: center;
     min-height: 100vh;
 }
 
@@ -340,6 +349,21 @@ img {
 @media (min-width: 48em) {
     .section-title {
         font-size: 3rem;
+    }
+}
+
+/* Center sections for smaller screens */
+@media (max-width: 768px) {
+    .site-header, .nav-container, .cursor-follower, section {
+        margin: 0 auto;
+        text-align: center;
+        width: 88%; 
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    section {
+        padding: 20px 0;
     }
 }
 
@@ -411,7 +435,7 @@ img {
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 48em) {
     .home-content {
         flex-direction: column;
         justify-content: space-between;
