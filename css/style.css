@@ -478,6 +478,35 @@ img {
     }
 }
 
+@media (max-width: 64em) {
+    .home-art {
+        width: 60%; /* Reduce the size of the home-art */
+        margin: 0 auto; /* Center it */
+    }
+
+    .home-title {
+        font-size: 3rem; /* Reduce font size for smaller screens */
+        line-height: 1.2; /* Adjust line height */
+        margin-top: 10px; /* Add spacing from the top */
+    }
+
+    .tagline {
+        font-size: 1.5rem; /* Reduce tagline font size */
+        margin-top: 5px; /* Adjust spacing */
+    }
+
+    .down-arrow {
+        width: 25px; /* Reduce the size of the down-arrow */
+        height: 25px; /* Maintain aspect ratio */
+        margin-top: 15px; /* Add spacing */
+    }
+
+    /* Optional: Add padding to the home section to prevent overlap */
+    .home {
+        padding-top: 4px; /* Adjust padding to account for the nav menu */
+    }
+}
+
 @media (min-width: 1253px) {
     .home-content {
         flex-direction: row;
