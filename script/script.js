@@ -174,3 +174,43 @@ window.addEventListener('mousemove', e => {
   follower.style.left = `${e.clientX}px`;
 });
 
+// detect user scrolls to footer
+document.addEventListener("DOMContentLoaded", () => {
+  const mainNav = document.querySelector(".main-nav");
+  const socialSidebar = document.querySelector(".social-sidebar");
+  const footer = document.querySelector(".site-footer");
+  const hamburger = document.querySelector(".hamburger"); // Select the hamburger icon
+  const logo = document.querySelector(".logo"); // Select the logo image
+
+  window.addEventListener("scroll", () => {
+      const footerRect = footer.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      // Check if the footer is in view
+      if (footerRect.top <= windowHeight) {
+          socialSidebar.classList.add("hidden");
+          mainNav.classList.add("hidden");
+
+          // Fade up or slide up the hamburger icon and logo
+          hamburger.style.opacity = "0";
+          hamburger.style.transform = "translateY(-20px)";
+          hamburger.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+
+          logo.style.opacity = "0";
+          logo.style.transform = "translateY(-20px)";
+          logo.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+      } else {
+          socialSidebar.classList.remove("hidden");
+          mainNav.classList.remove("hidden");
+
+          // Fade back or slide back the hamburger icon and logo
+          hamburger.style.opacity = "1";
+          hamburger.style.transform = "translateY(0)";
+          hamburger.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+
+          logo.style.opacity = "1";
+          logo.style.transform = "translateY(0)";
+          logo.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+      }
+  });
+});

@@ -114,6 +114,12 @@ img {
     opacity: 1;
 }
 
+.main-nav.hidden{
+    opacity: 0; 
+    transition: opacity 0.5s ease; 
+    pointer-events: none; 
+}
+
 .nav-links {
     list-style: none;
     display: flex;
@@ -172,6 +178,11 @@ img {
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
+.social-sidebar.hidden {
+    opacity: 0; /* Hide the sidebar */
+    transform: translateY(20px); /* Move it slightly down for smooth effect */
+    pointer-events: none; /* Disable interaction when hidden */
+}
 
 .social-sidebar img {
     width: 1.25rem;
@@ -209,6 +220,7 @@ img {
     }
 }
 
+
 @media (min-width: 64em) {
     .nav-line {
         display: block;
@@ -219,13 +231,13 @@ img {
         margin-right: 0.5rem;
         transition: background-color 0.3s ease, height 0.3s ease;
     }
-
+    
     img.nav-line {
         height: 10rem;
         width: 9rem;
         object-fit: contain;
     }
-
+    
     .site-header {
         position: fixed;
         top: 0rem;
@@ -233,16 +245,16 @@ img {
         margin: 0;
         background: transparent;
     }
-
+    
     .hamburger {
         display: none;
     }
-
+    
     .logo img {
         height: 4rem;
         width: auto;
     }
-
+    
     .nav-container {
         position: fixed;
         top: 50%;
@@ -253,7 +265,7 @@ img {
         align-items: flex-start;
         z-index: 1000;
     }
-
+    
     .main-nav {
         position: fixed;
         top: 50%;
@@ -265,7 +277,7 @@ img {
         padding-top: 0;
         gap: 1.5rem;
     }
-
+    
     .nav-links {
         list-style: none;
         display: flex;
@@ -274,7 +286,7 @@ img {
         padding: 0;
         margin: 0;
     }
-
+    
     .nav-links a {
         display: flex;
         align-items: center;
@@ -286,12 +298,12 @@ img {
         color: var(--accent-hover);
         transition: all 0.3s ease;
     }
-
+    
     .nav-link.active {
         color: var(--accent-color);
         font-weight: 700;
     }
-
+    
     .nav-link.active .nav-line {
         background-color: var(--accent-color);
         height: 2rem;
@@ -1096,7 +1108,7 @@ strong {
 
 .contact {
     text-align: center;
-    padding: 4rem 1.5rem;
+    padding: 4rem 1rem 2rem;
 }
 
 .contact-intro {
@@ -1179,4 +1191,120 @@ a {
     scroll-snap-type: y mandatory;
 }
 
-/* Footer Styles */
+/* Footer */
+.site-footer {
+    background-color: var(--bg-color);
+    background-image: url("https://www.transparenttextures.com/patterns/egg-shell.png");
+    padding: 3rem 1.5rem 1.5rem;
+    padding-bottom: 4rem;
+    font-family: 'Space Mono', monospace;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
+}
+
+.footer-brand {
+    display: flex;
+    flex-direction: column; /* Stack logo and tagline vertically */
+    align-items: center; /* Center-align logo and tagline */
+    gap: 0.5rem; /* Adjust spacing between logo and tagline */
+}
+
+.footer-brand img {
+    width: 60px;
+    margin-bottom: 0.5rem;
+}
+
+.footer-tagline {
+    font-size: 0.85rem;
+    color: var(--text-color);
+    max-width: 300px;
+    line-height: 1.4;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: var(--accent-hover);
+}
+
+.footer-bottom {
+    margin-top: 2rem;
+    font-size: 0.8rem;
+    color: var(--text-color);
+    text-align: center;
+    opacity: 0.7;
+}
+
+.footer-bottom strong {
+    color: var(--accent-color);
+}
+
+@media (min-width: 64em) {
+    .footer-container {
+        flex-direction: row; /* Arrange items side-by-side */
+        justify-content: space-evenly; /* Center items horizontally */
+        text-align: left; /* Align text to the left */
+    }
+
+    .footer-brand {
+        flex-direction: row; /* Arrange logo and tagline side-by-side */
+        gap: 10px; /* Add spacing between logo and tagline */
+    }
+
+    .footer-brand img {
+        margin-bottom: 0; /* Remove bottom margin for side-by-side layout */
+    }
+}
+
+@media (max-width: 768px) {
+    .site-footer {
+        bottom: 4rem;
+    }
+}
+
+/* Footer-Divider */
+.footer-wave {
+    margin: 0 auto;
+    background: transparent;
+    overflow: hidden;
+    width: 100vw; /* Full viewport width */
+    line-height: 0;
+  }
+  
+  .footer-wave svg {
+    display: block;
+    width: 100%;
+    height: 60px;
+  }
+  
+  .footer-wave svg {
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: waveFadeIn 0.6s ease forwards;
+    animation-delay: 0.2s;
+  }
+  
+  @keyframes waveFadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
