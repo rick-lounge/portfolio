@@ -179,38 +179,36 @@ document.addEventListener("DOMContentLoaded", () => {
   const mainNav = document.querySelector(".main-nav");
   const socialSidebar = document.querySelector(".social-sidebar");
   const footer = document.querySelector(".site-footer");
-  const hamburger = document.querySelector(".hamburger"); // Select the hamburger icon
-  const logo = document.querySelector(".logo"); // Select the logo image
+  const hamburger = document.querySelector(".hamburger");
+  const logo = document.querySelector(".logo");
+  const siteHeader = document.querySelector(".site-header");
 
   window.addEventListener("scroll", () => {
-      const footerRect = footer.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
+    const footerRect = footer.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+    const inView = footerRect.top <= windowHeight;
 
-      // Check if the footer is in view
-      if (footerRect.top <= windowHeight) {
-          socialSidebar.classList.add("hidden");
-          mainNav.classList.add("hidden");
+    // Hide elements when footer is in view
+    socialSidebar.classList.toggle("hidden", inView);
+    mainNav.classList.toggle("hidden", inView);
 
-          // Fade up or slide up the hamburger icon and logo
-          hamburger.style.opacity = "0";
-          hamburger.style.transform = "translateY(-20px)";
-          hamburger.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+    // Fade/slide logo and hamburger
+    const fade = inView ? "0" : "1";
+    const slide = inView ? "-20px" : "0";
 
-          logo.style.opacity = "0";
-          logo.style.transform = "translateY(-20px)";
-          logo.style.transition = "opacity 0.5s ease, transform 0.5s ease";
-      } else {
-          socialSidebar.classList.remove("hidden");
-          mainNav.classList.remove("hidden");
+    hamburger.style.opacity = fade;
+    hamburger.style.transform = `translateY(${slide})`;
+    hamburger.style.transition = "opacity 0.5s ease, transform 0.5s ease";
 
-          // Fade back or slide back the hamburger icon and logo
-          hamburger.style.opacity = "1";
-          hamburger.style.transform = "translateY(0)";
-          hamburger.style.transition = "opacity 0.5s ease, transform 0.5s ease";
+    logo.style.opacity = fade;
+    logo.style.transform = `translateY(${slide})`;
+    logo.style.transition = "opacity 0.5s ease, transform 0.5s ease";
 
-          logo.style.opacity = "1";
-          logo.style.transform = "translateY(0)";
-          logo.style.transition = "opacity 0.5s ease, transform 0.5s ease";
-      }
+    // Remove site-header background on small screens
+    if (siteHeader && window.innerWidth < 768) {
+      siteHeader.style.background = inView ? "transparent" : "";
+    } else {
+      siteHeader.style.background = "";
+    }
   });
 });
