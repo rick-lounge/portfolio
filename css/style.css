@@ -1101,11 +1101,6 @@ strong {
     .about-content {
         flex: 1;
     }
-
-    .hobby-item:hover img {
-        transform: scale(1.05);
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-    }
 }
 
 .contact {
@@ -1289,6 +1284,7 @@ a {
     overflow: hidden;
     width: 100vw; /* Full viewport width */
     line-height: 0;
+    
 }
 
 .footer-wave svg {
