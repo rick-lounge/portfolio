@@ -27,7 +27,7 @@ tabButtons.forEach(button => {
         // Remove fade-in after animation completes to reset
         setTimeout(() => {
             skillsGrid.classList.remove('fade-in');
-        }, 400); // match transition duration
+        }, 400); 
         }, 300);
     });
 });
@@ -212,3 +212,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+

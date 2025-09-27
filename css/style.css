@@ -179,9 +179,9 @@ img {
 }
 
 .social-sidebar.hidden {
-    opacity: 0; /* Hide the sidebar */
-    transform: translateY(20px); /* Move it slightly down for smooth effect */
-    pointer-events: none; /* Disable interaction when hidden */
+    opacity: 0; 
+    transform: translateY(20px); 
+    pointer-events: none; 
 }
 
 .social-sidebar img {
@@ -492,30 +492,29 @@ img {
 
 @media (max-width: 64em) {
     .home-art {
-        width: 60%; /* Reduce the size of the home-art */
-        margin: 0 auto; /* Center it */
+        width: 60%; 
+        margin: 0 auto; 
     }
 
     .home-title {
-        font-size: 3rem; /* Reduce font size for smaller screens */
-        line-height: 1.2; /* Adjust line height */
-        margin-top: 10px; /* Add spacing from the top */
+        font-size: 3rem; 
+        line-height: 1.2; 
+        margin-top: 10px; 
     }
 
     .tagline {
-        font-size: 1.5rem; /* Reduce tagline font size */
-        margin-top: 5px; /* Adjust spacing */
+        font-size: 1.5rem; 
+        margin-top: 5px; 
     }
 
     .down-arrow {
-        width: 25px; /* Reduce the size of the down-arrow */
-        height: 25px; /* Maintain aspect ratio */
-        margin-top: 15px; /* Add spacing */
+        width: 25px; 
+        height: 25px; 
+        margin-top: 15px; 
     }
 
-    /* Optional: Add padding to the home section to prevent overlap */
     .home {
-        padding-top: 4px; /* Adjust padding to account for the nav menu */
+        padding-top: 4px; 
     }
 }
 
@@ -1070,6 +1069,7 @@ img {
 }
 
 .hobby-descriptions li {
+    text-align: left;
     list-style: none;
     margin-bottom: 1rem;
 }
@@ -1256,18 +1256,18 @@ a {
 
 @media (min-width: 64em) {
     .footer-container {
-        flex-direction: row; /* Arrange items side-by-side */
-        justify-content: space-evenly; /* Center items horizontally */
-        text-align: left; /* Align text to the left */
+        flex-direction: row; 
+        justify-content: space-evenly;
+        text-align: left; 
     }
 
     .footer-brand {
-        flex-direction: row; /* Arrange logo and tagline side-by-side */
-        gap: 10px; /* Add spacing between logo and tagline */
+        flex-direction: row; 
+        gap: 10px;
     }
 
     .footer-brand img {
-        margin-bottom: 0; /* Remove bottom margin for side-by-side layout */
+        margin-bottom: 0; 
     }
 }
 
@@ -1282,7 +1282,7 @@ a {
     margin: 0 auto;
     background: transparent;
     overflow: hidden;
-    width: 100vw; /* Full viewport width */
+    width: 100vw; 
     line-height: 0;
     
 }
