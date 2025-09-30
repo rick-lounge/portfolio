@@ -14,16 +14,14 @@
     <link rel="shortcut icon" href="favicon/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="MyWebSite" />
-    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="manifest" href="favicon/site.webmanifest" />
 </head>
 <body>
 
     <div class="cursor-follower"></div>
-    <!-- Fixed Navigation -->
     <header class="site-header">
         <div class="nav-container">
-            <!-- Hamburger Menu for mobile/tablet -->
-            <div class="hamburger" id="hamburger" aria label="Toggle navigation menu">
+            <div class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
                 <img src="images/hamburger-icon.svg" alt="Menu"/>
             </div>
             
@@ -31,31 +29,28 @@
             <nav class="main-nav" aria-label="Primary">
                 <ul class="nav-links">
                     <li><a href="#home" class="nav-link active"><span class="nav-line"></span>Home</a></li>
-                    <li><a href="#projects" class="nav-link active"><span class="nav-line"></span>Projects</a></li>
-                    <li><a href="#skills" class="nav-link active"><span class="nav-line"></span>Skills</a></li>
-                    <li><a href="#about" class="nav-link active"><span class="nav-line"></span>About</a></li>
-                    <li><a href="#contact" class="nav-link active"><span class="nav-line"></span>Contact</a></li>
+                    <li><a href="#projects" class="nav-link"><span class="nav-line"></span>Projects</a></li>
+                    <li><a href="#skills" class="nav-link"><span class="nav-line"></span>Skills</a></li>
+                    <li><a href="#about" class="nav-link"><span class="nav-line"></span>About</a></li>
+                    <li><a href="#contact" class="nav-link"><span class="nav-line"></span>Contact</a></li>
                 </ul>
             </nav>
             
         </div>
-        <!-- Logo -->
         <a href="#home" class="logo" data-aos="zoom-in">
             <img src="images/logo.svg" alt="Ricky Dadis Logo">
         </a>
     </header>
     
-    <!-- Social Sidebar -->
     <div class="social-sidebar">
         <div class="social-icons">
-            <a href="https://github.com/rick-lounge" target="_blank"><img src="images/contact-icons/github-icon.svg" alt="GitHub" ></a>
-            <a href="https://linkedin.com" target="_blank"><img src="images/contact-icons/linkedin-icon.svg" alt="LinkedIn" ></a>
-            <a href="mailto:ashenricky22@gmail.com" target="_blank"><img src="images/contact-icons/email-icon.svg" alt="Email"></a>
+            <a href="https://github.com/rick-lounge" target="_blank" rel="noopener noreferrer"><img src="images/contact-icons/github-icon.svg" alt="GitHub" ></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><img src="images/contact-icons/linkedin-icon.svg" alt="LinkedIn" ></a>
+            <a href="mailto:ashenricky22@gmail.com"><img src="images/contact-icons/email-icon.svg" alt="Email"></a>
         </div>
     </div>
     
     <div class="snap-wrapper">
-        <!-- Home Section -->
         <section id="home" class="section home" data-aos="fade-zoom-in"
         data-aos-easing="ease-in-back"
         data-aos-delay="300"
@@ -75,111 +70,133 @@
         </a>
     </section>
     
-    <!-- Projects Section -->
-    <section id="projects" class="section projects" data-aos="fade-up" data-aos-delay="400" >
+    <section id="projects" class="section projects" data-aos="fade-up" data-aos-delay="400">
         <h2 class="section-title">Projects</h2>
-                <div class="projects-slider">
-                    <div class="slider-container">
-                        <button class="slider-arrow left">&#8592;</button>
-                        
-                        <div class="slider-track">
-                            <!-- SLIDE START -->
-                            <!-- Simple Static Website - Nails by Asmarayah -->
-                            <div class="project-slide">
-                                <div class="slide-image">
-                                    <img src="images/projects/nails-by-asmarayah.png" alt="Nails by Asmarayah" />
-                                </div>
-                                <div class="slide-content">
-                                    <h3 class="project-title">Nails by Asmarayah - Static Website</h3>
-                                    <p class="project-description">Nails by Asmarayah is an experimental promo site built as a barter collaboration. I designed and built a fast static site with an SVG-masked hero image, CSS view-timeline text wipes, and buttery smooth scrolling via Lenis. The gallery is WebP + lazy-loaded, and there's a handy copy-to-book CTA—small, playful interactions without sacrificing performance.</p>
-                                    <div class="tech-icons">
-                                        <div class="tech-item"><img src="images/tools-icons/html-icon.svg" alt="HTML5"><p>HTML5</p></div>
-                                        <div class="tech-item"><img src="images/tools-icons/css-icon.svg" alt="CSS3"><p>CSS3</p></div>
-                                        <div class="tech-item"><img src="images/tools-icons/js-icon.svg" alt="JavaScript"><p>JavaScript</p></div>
-                                        <div class="tech-item"><img src="images/tools-icons/adobe-illustrator-icon.svg" alt="Adobe Illustrator"><p>Adobe Illustrator</p></div>
-                                    </div>
-                                    <a class="project-btn" href="https://rickodes.com/nails-by-asmarayah" target="_blank">Visit Website</a>
-                                </div>
-                            </div>
-                            <!-- RPS-RACE GAME -->
-                            <div class="project-slide">
-                                <div class="slide-image">
-                                    <img src="images/projects/rps-race.webp" alt="Rock Paper Scissors Race" />
-                                </div>
-                                <div class="slide-content">
-                                    <h3 class="project-title">Rock Paper Scissors Race!</h3>
-                                    <p class="project-description">A browser-based game built with HTML, CSS, and JavaScript. Features DOM manipulation, scoring, event handling, and custom animations to create an engaging race-style twist on the classic game.</p>
-                                    <div class="tech-icons">
-                                        <div class="tech-item"><img src="images/tools-icons/html-icon.svg" alt="HTML5"><p>HTML5</p></div>
-                                        <div class="tech-item"><img src="images/tools-icons/css-icon.svg" alt="CSS3"><p>CSS3</p></div>
-                                        <div class="tech-item"><img src="images/tools-icons/js-icon.svg" alt="JavaScript"><p>JavaScript</p></div>
-                                    </div>
-                                    <a class="project-btn" href="https://rickodes.com/rps-race" target="_blank">Visit Website</a>
-                                </div>
-                            </div>
-                            
-                            <!-- Movie Databse Prototype -->
-                            <div class="project-slide">
-                                <div class="slide-image">
-                                    <img src="images/projects/movie-database-prototype.webp" alt="Movie Database Hi-Fi Prototype" />
-                                </div>
-                                <div class="slide-content">
-                                    <h3 class="project-title">POPCORNQUEUE - Movie Database Hi-Fi Interactive Prototype</h3>
-                                    <p class="project-description">
-                                        Collaborated and designed a hi-fi clickable prototype using Adobe XD. Applied user-centered design principles and consistent UX flow. Used responsive layout techniques for mobile and desktop views.
-                                    </p>
-                                    <div class="tech-icons">
-                                        <div class="tech-item"><img src="images/tools-icons/adobe-xd-icon.svg" alt="Adobe XD"><p>Adobe XD</p></div>
-                                    </div>
-                                    <a class="project-btn" href="https://xd.adobe.com/view/f0305d5e-4924-4879-9f8b-9b5dd892e052-a563/" target="_blank">View Prototype</a>
-                                </div>
-                            </div> 
-                            
-                            <!-- Isla Wander -->
-                            <div class="project-slide">
-                                <div class="slide-image">
-                                    <img src="images/projects/isla-wander.webp" alt="ISLA WANDER WooCommerce site preview" />
-                                </div>
-                                <div class="slide-content">
-                                    <h3 class="project-title">ISLA WANDER - WooCommerce Tour Booking Site</h3>
-                                    <p class="project-description">
-                                        Collaborated on a capstone project building a functional tour booking website using WordPress and WooCommerce. Integrated payment gateways, booking logic, and responsive custom theming.
-                                    </p>
-                                    <div class="tech-icons">
-                                        <div class="tech-item"><img src="images/tools-icons/wp-icon.svg" alt="WordPress"><p>WordPress</p></div>
-                                        <div class="tech-item"><img src="images/tools-icons/woocommerce-icon.svg" alt="WooCommerce"><p>WooCommerce</p></div>
-                                    </div>
-                                    <a class="project-btn" href="https://islawander.bcitwebdeveloper.ca" target="_blank">Visit Website</a>
-                                </div>
-                            </div>
-                            
-                            <!-- Movie Databse PS Mockup Design -->
-                            <div class="project-slide">
-                                <div class="slide-image">
-                                    <img src="images/projects/movie-database-photoshop-mockup.webp" alt="Photoshop Mockup preview" />
-                                </div>
-                                <div class="slide-content">
-                                    <h3 class="project-title">Movie Database - Photoshop Mockup Design</h3>
-                                    <p class="project-description">
-                                        Designed a high-fidelity interface mockup using Adobe Photoshop. Demonstrates a clean layout with visual hierarchy and layered elements. Download available for review and editing.
-                                    </p>
-                                    <div class="tech-icons">
-                                        <div class="tech-item"><img src="images/tools-icons/adobe-photoshop-icon.svg" alt="Photoshop"><p>Photoshop</p></div>
-                                    </div>
-                                    <a class="project-btn" href="files/ricky-dadis-movie-database-mockup.psd" download>Download Mockup</a>
-                                </div>
-                            </div>                      
+        <div class="project-accordion">
+            <div class="accordion-item" data-preview-image="images/projects/nails-by-asmarayah.png">
+                <button class="accordion-header" aria-expanded="false">
+                    <span class="accordion-title">Nails by Asmarayah - Static Website</span>
+                    <span class="accordion-icon"></span>
+                </button>
+                <div class="accordion-content" aria-hidden="true">
+                    <div class="project-content-inner">
+                        <div class="project-image">
+                            <img src="images/projects/nails-by-asmarayah.png" alt="Nails by Asmarayah project preview" />
                         </div>
-                        
-                        <button class="slider-arrow right">&#8594;</button>
+                        <div class="project-info">
+                            <p class="project-description">An experimental promo site built as a barter collaboration. I designed and built a fast static site with an SVG-masked hero image, CSS view-timeline text wipes, and buttery smooth scrolling. The gallery is WebP + lazy-loaded, and there's a handy copy-to-book CTA.</p>
+                            <h4>Reflection</h4>
+                            <p class="project-reflection">This was a fantastic exercise in creative coding and performance optimization. Balancing playful CSS animations with a fast load time was the main challenge, and I'm proud of how smooth the final result feels.</p>
+                            <div class="tech-icons">
+                                <div class="tech-item"><img src="images/tools-icons/html-icon.svg" alt="HTML5"><p>HTML5</p></div>
+                                <div class="tech-item"><img src="images/tools-icons/css-icon.svg" alt="CSS3"><p>CSS3</p></div>
+                                <div class="tech-item"><img src="images/tools-icons/js-icon.svg" alt="JavaScript"><p>JavaScript</p></div>
+                                <div class="tech-item"><img src="images/tools-icons/adobe-illustrator-icon.svg" alt="Adobe Illustrator"><p>Illustrator</p></div>
+                            </div>
+                            <a class="project-btn" href="https://rickodes.com/nails-by-asmarayah" target="_blank" rel="noopener noreferrer">Visit Website</a>
+                        </div>
                     </div>
-                    <!-- dots -->
-                    <div class="slider-dots"></div>
                 </div>
-            </section>
+            </div>
+
+            <div class="accordion-item" data-preview-image="images/projects/rps-race.webp">
+                <button class="accordion-header" aria-expanded="false">
+                    <span class="accordion-title">Rock Paper Scissors Race!</span>
+                    <span class="accordion-icon"></span>
+                </button>
+                <div class="accordion-content" aria-hidden="true">
+                    <div class="project-content-inner">
+                        <div class="project-image">
+                            <img src="images/projects/rps-race.webp" alt="Rock Paper Scissors Race game preview" />
+                        </div>
+                        <div class="project-info">
+                            <p class="project-description">A browser-based game built with HTML, CSS, and JavaScript. Features DOM manipulation, scoring, event handling, and custom animations to create an engaging race-style twist on the classic game.</p>
+                            <h4>Reflection</h4>
+                            <p class="project-reflection">This project was pure JavaScript fun. It was a great way to solidify my understanding of the DOM, event listeners, and managing game state. Creating the race animation from scratch taught me a lot about timing and visual feedback.</p>
+                            <div class="tech-icons">
+                                <div class="tech-item"><img src="images/tools-icons/html-icon.svg" alt="HTML5"><p>HTML5</p></div>
+                                <div class="tech-item"><img src="images/tools-icons/css-icon.svg" alt="CSS3"><p>CSS3</p></div>
+                                <div class="tech-item"><img src="images/tools-icons/js-icon.svg" alt="JavaScript"><p>JavaScript</p></div>
+                            </div>
+                            <a class="project-btn" href="https://rickodes.com/rps-race" target="_blank" rel="noopener noreferrer">Visit Website</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item" data-preview-image="images/projects/movie-database-prototype.webp">
+                <button class="accordion-header" aria-expanded="false">
+                    <span class="accordion-title">POPCORNQUEUE - Hi-Fi Interactive Prototype</span>
+                    <span class="accordion-icon"></span>
+                </button>
+                <div class="accordion-content" aria-hidden="true">
+                    <div class="project-content-inner">
+                        <div class="project-image">
+                            <img src="images/projects/movie-database-prototype.webp" alt="Movie Database Hi-Fi Prototype preview" />
+                        </div>
+                        <div class="project-info">
+                            <p class="project-description">Collaborated and designed a hi-fi clickable prototype using Adobe XD. Applied user-centered design principles and consistent UX flow. Used responsive layout techniques for mobile and desktop views.</p>
+                            <h4>Reflection</h4>
+                            <p class="project-reflection">My main takeaway from this was the importance of a solid design system and component-based thinking, even in a prototype. Keeping the UX consistent across mobile and desktop views was a key focus for our team.</p>
+                            <div class="tech-icons">
+                                <div class="tech-item"><img src="images/tools-icons/adobe-xd-icon.svg" alt="Adobe XD"><p>Adobe XD</p></div>
+                            </div>
+                            <a class="project-btn" href="https://xd.adobe.com/view/f0305d5e-4924-4879-9f8b-9b5dd892e052-a563/" target="_blank" rel="noopener noreferrer">View Prototype</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item" data-preview-image="images/projects/isla-wander.webp">
+                <button class="accordion-header" aria-expanded="false">
+                    <span class="accordion-title">ISLA WANDER - WooCommerce Tour Booking Site</span>
+                    <span class="accordion-icon"></span>
+                </button>
+                <div class="accordion-content" aria-hidden="true">
+                    <div class="project-content-inner">
+                        <div class="project-image">
+                            <img src="images/projects/isla-wander.webp" alt="ISLA WANDER WooCommerce site preview" />
+                        </div>
+                        <div class="project-info">
+                            <p class="project-description">Collaborated on a capstone project building a functional tour booking website using WordPress and WooCommerce. Integrated payment gateways, booking logic, and responsive custom theming.</p>
+                            <h4>Reflection</h4>
+                            <p class="project-reflection">This capstone was my first deep dive into a full-fledged CMS with e-commerce. Integrating third-party plugins and customizing a theme taught me a lot about the WordPress ecosystem and the challenges of building on an existing platform.</p>
+                            <div class="tech-icons">
+                                <div class="tech-item"><img src="images/tools-icons/wp-icon.svg" alt="WordPress"><p>WordPress</p></div>
+                                <div class="tech-item"><img src="images/tools-icons/woocommerce-icon.svg" alt="WooCommerce"><p>WooCommerce</p></div>
+                            </div>
+                            <a class="project-btn" href="https://islawander.bcitwebdeveloper.ca" target="_blank" rel="noopener noreferrer">Visit Website</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="accordion-item" data-preview-image="images/projects/movie-database-photoshop-mockup.webp">
+                <button class="accordion-header" aria-expanded="false">
+                    <span class="accordion-title">Movie Database - Photoshop Mockup Design</span>
+                    <span class="accordion-icon"></span>
+                </button>
+                <div class="accordion-content" aria-hidden="true">
+                    <div class="project-content-inner">
+                        <div class="project-image">
+                            <img src="images/projects/movie-database-photoshop-mockup.webp" alt="Photoshop Mockup preview" />
+                        </div>
+                        <div class="project-info">
+                            <p class="project-description">Designed a high-fidelity interface mockup using Adobe Photoshop. Demonstrates a clean layout with visual hierarchy and layered elements. Download available for review and editing.</p>
+                            <h4>Reflection</h4>
+                            <p class="project-reflection">This was an early design project that helped me understand visual hierarchy and layout principles in Photoshop. It was a good lesson in organizing layers and thinking about how a static design would translate into interactive components.</p>
+                            <div class="tech-icons">
+                                <div class="tech-item"><img src="images/tools-icons/adobe-photoshop-icon.svg" alt="Photoshop"><p>Photoshop</p></div>
+                            </div>
+                            <a class="project-btn" href="files/ricky-dadis-movie-database-mockup.psd" download>Download Mockup</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
             
             
-            <!-- Skills Section -->
             <section id="skills" class="section skills" data-aos="fade-up" data-aos-delay="400">
                 <h2 class="section-title">Skills</h2>
                 
@@ -252,7 +269,6 @@
             </div>
         </section>
 
-        <!-- About Section -->
         <section id="about" class="section about" data-aos="fade-up" data-aos-delay="400">
             <h2 class="section-title" data-aos="fade-up" data-aos-delay="400">About Me</h2>
             
@@ -270,7 +286,6 @@
                 </div>
             </div>
             
-            <!-- Hobbies-->
             <h3 class="hobby-heading" data-aos="fade-up" data-aos-delay="400">Other things I love and do!</h3>
             <div class="hobby-descriptions" data-aos="fade-up" data-aos-delay="400">
                 <ul>
@@ -304,7 +319,6 @@
             </div>
         </section>
         
-        <!-- Contact Section -->
         <section id="contact" class="section contact" data-aos="fade-up" data-aos-delay="600">
             <h2 class="section-title">Let's Connect</h2>
             
@@ -318,33 +332,28 @@
                 <button type="submit">Send Message</button>
             </form>
             
-            <!-- Social sidebar under contact -->
             <div class="contact-social">
-                <a href="https://github.com/rick-lounge" target="_blank"><img src="images/contact-icons/github-icon.svg" alt="GitHub" /></a>
-                <a href="https://linkedin.com" target="_blank"><img src="images/contact-icons/linkedin-icon.svg" alt="LinkedIn" /></a>
-                <a href="mailto:ashenricky22@gmail.com" target="_blank"><img src="images/contact-icons/email-icon.svg" alt="Email" /></a>
+                <a href="https://github.com/rick-lounge" target="_blank" rel="noopener noreferrer"><img src="images/contact-icons/github-icon.svg" alt="GitHub" /></a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><img src="images/contact-icons/linkedin-icon.svg" alt="LinkedIn" /></a>
+                <a href="mailto:ashenricky22@gmail.com"><img src="images/contact-icons/email-icon.svg" alt="Email" /></a>
             </div>
         </section>
     </div>
 
-    <!-- JS -->
     <script src="script/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
         AOS.init();
         </script>
-        <!-- Elfsight Audio Player-->
         <script src="https://static.elfsight.com/platform/platform.js" async></script>
         <div class="elfsight-app-b4664b42-998e-4566-927a-6872aeae094d" data-elfsight-app-lazy></div>
 
-    <!-- divider -->
     <div class="footer-wave">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
             <path d="M1000 0H0v52C62.5 28 125 4 250 4c250 0 250 96 500 96 125 0 187.5-24 250-48V0Z" fill="var(--accent-color)"/>
         </svg>
     </div>
 
-    <!-- Footer -->
     <footer class="site-footer">
         
         <div class="footer-container">
@@ -362,10 +371,11 @@
         </div>
         
         <div class="footer-bottom">
-            <p>© 2025 <strong>Ricky Dadis</strong> · Designed & Built with ☕ + 💻</p>
+            <p>© 2025 <strong>Ricky Dadis</strong> · All rights reserved.</p>
         </div>
     </footer>
-
+    
+    <div id="project-preview"><img src="" alt="Project Preview"></div>
     
 </body>
 </html>
