@@ -5,10 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfolio of Ricky Dadis - front-end web developer & designer based in BC. View web projects, UX prototypes, and design mockups.">
     <title>Ricky Dadis Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://use.typekit.net">
+
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
-    <link rel="stylesheet" href="https://use.typekit.net/uie5nox.css"> 
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://use.typekit.net/uie5nox.css" media="print" onload="this.media='all'">
+
     <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
     <link rel="shortcut icon" href="favicon/favicon.ico" />
@@ -82,7 +89,7 @@
                 <div class="accordion-content" aria-hidden="true">
                     <div class="project-content-inner">
                         <div class="project-image">
-                            <img src="images/projects/nails-by-asmarayah.webp" alt="Nails by Asmarayah project preview" />
+                            <img loading="lazy" src="images/projects/nails-by-asmarayah.webp" alt="Nails by Asmarayah project preview" width="800" height="450" />
                         </div>
                         <div class="project-info">
                             <p class="project-description">An experimental promo site built as a barter collaboration. I designed and built a fast static site with an SVG-masked hero image, CSS view-timeline text wipes, and buttery smooth scrolling. The gallery is WebP + lazy-loaded, and there's a handy copy-to-book CTA.</p>
@@ -108,7 +115,7 @@
                 <div class="accordion-content" aria-hidden="true">
                     <div class="project-content-inner">
                         <div class="project-image">
-                            <img src="images/projects/rps-race.webp" alt="Rock Paper Scissors Race game preview" />
+                            <img loading="lazy" src="images/projects/rps-race.webp" alt="Rock Paper Scissors Race game preview" width="800" height="450"/>
                         </div>
                         <div class="project-info">
                             <p class="project-description">A browser-based game built with HTML, CSS, and JavaScript. Features DOM manipulation, scoring, event handling, and custom animations to create an engaging race-style twist on the classic game.</p>
@@ -133,7 +140,7 @@
                 <div class="accordion-content" aria-hidden="true">
                     <div class="project-content-inner">
                         <div class="project-image">
-                            <img src="images/projects/movie-database-prototype.webp" alt="Movie Database Hi-Fi Prototype preview" />
+                            <img loading="lazy" src="images/projects/movie-database-prototype.webp" alt="Movie Database Hi-Fi Prototype preview" width="800" height="450"/>
                         </div>
                         <div class="project-info">
                             <p class="project-description">Collaborated and designed a hi-fi clickable prototype using Adobe XD. Applied user-centered design principles and consistent UX flow. Used responsive layout techniques for mobile and desktop views.</p>
@@ -156,7 +163,7 @@
                 <div class="accordion-content" aria-hidden="true">
                     <div class="project-content-inner">
                         <div class="project-image">
-                            <img src="images/projects/isla-wander.webp" alt="ISLA WANDER WooCommerce site preview" />
+                            <img loading="lazy" src="images/projects/isla-wander.webp" alt="ISLA WANDER WooCommerce site preview" width="800" height="450"/>
                         </div>
                         <div class="project-info">
                             <p class="project-description">Collaborated on a capstone project building a functional tour booking website using WordPress and WooCommerce. Integrated payment gateways, booking logic, and responsive custom theming.</p>
@@ -180,7 +187,7 @@
                 <div class="accordion-content" aria-hidden="true">
                     <div class="project-content-inner">
                         <div class="project-image">
-                            <img src="images/projects/movie-database-photoshop-mockup.webp" alt="Photoshop Mockup preview" />
+                            <img loading="lazy" src="images/projects/movie-database-photoshop-mockup.webp" alt="Photoshop Mockup preview" width="800" height="450"/>
                         </div>
                         <div class="project-info">
                             <p class="project-description">Designed a high-fidelity interface mockup using Adobe Photoshop. Demonstrates a clean layout with visual hierarchy and layered elements. Download available for review and editing.</p>
@@ -210,72 +217,89 @@
                     
                     <div class="skills-grid" id="skills-grid">
                         <div class="skill-item" data-category="dev">
-                            <img src="images/tools-icons/html-icon.svg" alt="HTML5" class="skill-icon" />
+                            <img loading="lazy" src="images/tools-icons/html-icon.svg" alt="HTML5" class="skill-icon" width="60" height="60" />
                             <p>HTML5</p>
                         </div>
                         <div class="skill-item" data-category="dev">
-                            <img src="images/tools-icons/css-icon.svg" alt="CSS3" class="skill-icon" />
+                            <img loading="lazy" src="images/tools-icons/css-icon.svg" alt="CSS3" class="skill-icon" width="60" height="60"/>
                             <p>CSS3</p>
                     </div>
                     <div class="skill-item" data-category="dev">
-                        <img src="images/tools-icons/js-icon.svg" alt="JavaScript" class="skill-icon" />
+                        <img loading="lazy" src="images/tools-icons/js-icon.svg" alt="JavaScript" class="skill-icon" width="60" height="60"/>
                         <p>JavaScript</p>
                     </div>
                     <div class="skill-item" data-category="dev">
-                        <img src="images/tools-icons/react-icon.svg" alt="React" class="skill-icon" />
+                        <img loading="lazy" src="images/tools-icons/react-icon.svg" alt="React" class="skill-icon" width="60" height="60"/>
                         <p>React</p>
                     </div>
                     <div class="skill-item" data-category="dev">
-                        <img src="images/tools-icons/wp-icon.svg" alt="Wordpress" class="skill-icon" />
+                        <img loading="lazy" src="images/tools-icons/wp-icon.svg" alt="Wordpress" class="skill-icon" width="60" height="60"/>
                         <p>Wordpress</p>
                     </div>
                     <div class="skill-item" data-category="dev">
-                        <img src="images/tools-icons/woocommerce-icon.svg" alt="Woocommerce" class="skill-icon" />
+                        <img loading="lazy" src="images/tools-icons/woocommerce-icon.svg" alt="Woocommerce" class="skill-icon" width="60" height="60"/>
                         <p>Woocommerce</p>
                     </div>
                     <div class="skill-item" data-category="dev">
-                        <img src="images/tools-icons/shopify-icon.svg" alt="Shopify" class="skill-icon" />
+                        <img loading="lazy" src="images/tools-icons/shopify-icon.svg" alt="Shopify" class="skill-icon" width="60" height="60"/>
                         <p>Shopify</p>
                     </div>
                     <div class="skill-item" data-category="dev">
-                        <img src="images/tools-icons/php-icon.svg" alt="PHP" class="skill-icon" />
+                        <img loading="lazy" src="images/tools-icons/php-icon.svg" alt="PHP" class="skill-icon" width="60" height="60"/>
                         <p>PHP</p>
                     </div>
                     <div class="skill-item" data-category="dev">
-                        <img src="images/tools-icons/mysql-icon.svg" alt="MySQL" class="skill-icon" />
+                        <img loading="lazy" src="images/tools-icons/mysql-icon.svg" alt="MySQL" class="skill-icon" width="60" height="60"/>
                         <p>MySQL</p>
                     </div>
                     <div class="skill-item" data-category="dev">
-                        <img src="images/tools-icons/sass-icon.svg" alt="SASS" class="skill-icon" />
+                        <img loading="lazy" src="images/tools-icons/sass-icon.svg" alt="SASS" class="skill-icon" width="60" height="60"/>
                         <p>SASS</p>
                     </div>
                     
                     <div class="skill-item" data-category="design">
-                        <img src="images/tools-icons/adobe-xd-icon.svg" alt="Adobe XD" class="skill-icon" />
+                        <img loading="lazy" src="images/tools-icons/adobe-xd-icon.svg" alt="Adobe XD" class="skill-icon" width="60" height="60"/>
                         <p>Adobe XD</p>
                     </div>
                     <div class="skill-item" data-category="design">
-                        <img src="images/tools-icons/figma-icon.svg" alt="Figma" class="skill-icon" />
+                        <img loading="lazy" src="images/tools-icons/figma-icon.svg" alt="Figma" class="skill-icon" width="60" height="60"/>
                         <p>Figma</p>
                     </div>
                     <div class="skill-item" data-category="design">
-                        <img src="images/tools-icons/adobe-illustrator-icon.svg" alt="Adobe Illustrator" class="skill-icon" />
+                        <img loading="lazy" src="images/tools-icons/adobe-illustrator-icon.svg" alt="Adobe Illustrator" class="skill-icon" width="60" height="60"/>
                         <p>Illustrator</p>
                     </div>
                     <div class="skill-item" data-category="design">
-                        <img src="images/tools-icons/adobe-photoshop-icon.svg" alt="Adobe Photoshop" class="skill-icon" />
+                        <img loading="lazy" src="images/tools-icons/adobe-photoshop-icon.svg" alt="Adobe Photoshop" class="skill-icon" width="60" height="60"/>
                         <p>Adobe Photoshop</p>
                     </div>
                 </div>
             </div>
         </section>
 
+        <div class="star-divider-container">
+            <div class="star-wrapper" id="star-left">
+                <svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 520 520">
+                    <defs><style>.st0{fill:#730e02}.st1{fill:#fff}</style></defs>
+                    <g><polygon class="st0" points="223.4 348.3 83.1 436.9 171.7 296.6 9.8 260 171.7 223.4 83.1 83.1 223.4 171.7 260 9.8 296.6 171.7 436.9 83.1 348.3 223.4 510.2 260 348.3 296.6 436.9 436.9 296.6 348.3 260 510.2 223.4 348.3"/><path d="M260,12.3l35.9,158.8.3,1.5,1.3-.8,137.6-86.9-86.9,137.6-.8,1.3,1.5.3,158.8,35.9-158.8,35.9-1.5.3.8,1.3,86.9,137.6-137.6-86.9-1.3-.8-.3,1.5-35.9,158.8-35.9-158.8-.3-1.5-1.3.8-137.6,86.9,86.9-137.6.8-1.3-1.5-.3L12.3,260l158.8-35.9,1.5-.3-.8-1.3L84.9,84.9l137.6,86.9,1.3.8.3-1.5L260,12.3M260,7.4l-36.9,163.5L81.4,81.4l89.5,141.7L7.4,260l163.5,36.9-89.5,141.7,141.7-89.5,36.9,163.5,36.9-163.5,141.7,89.5-89.5-141.7,163.5-36.9-163.5-36.9,89.5-141.7-141.7,89.5L260,7.4h0Z"/></g>
+                    <g><polygon class="st1" points="187.7 108.1 186.9 107.3 185.8 107.8 186.3 106.7 185.5 105.8 186.7 106 187.3 104.9 187.4 106.2 188.7 106.4 187.6 106.9 187.7 108.1"/><polygon points="187.3 104.9 186.7 106 185.5 105.8 186.3 106.7 185.8 107.8 186.9 107.3 187.7 108.1 187.6 106.9 188.7 106.4 187.4 106.2 187.3 104.9 187.3 104.9"/></g>
+                </svg>
+            </div>
+            <div class="star-wrapper" id="star-right">
+                <svg id="Layer_2" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 520 520">
+                    <defs><style>.st0{fill:#730e02}.st1{fill:#fff}</style></defs>
+                    <g><polygon class="st0" points="223.4 348.3 83.1 436.9 171.7 296.6 9.8 260 171.7 223.4 83.1 83.1 223.4 171.7 260 9.8 296.6 171.7 436.9 83.1 348.3 223.4 510.2 260 348.3 296.6 436.9 436.9 296.6 348.3 260 510.2 223.4 348.3"/><path d="M260,12.3l35.9,158.8.3,1.5,1.3-.8,137.6-86.9-86.9,137.6-.8,1.3,1.5.3,158.8,35.9-158.8,35.9-1.5.3.8,1.3,86.9,137.6-137.6-86.9-1.3-.8-.3,1.5-35.9,158.8-35.9-158.8-.3-1.5-1.3.8-137.6,86.9,86.9-137.6.8-1.3-1.5-.3L12.3,260l158.8-35.9,1.5-.3-.8-1.3L84.9,84.9l137.6,86.9,1.3.8.3-1.5L260,12.3M260,7.4l-36.9,163.5L81.4,81.4l89.5,141.7L7.4,260l163.5,36.9-89.5,141.7,141.7-89.5,36.9,163.5,36.9-163.5,141.7,89.5-89.5-141.7,163.5-36.9-163.5-36.9,89.5-141.7-141.7,89.5L260,7.4h0Z"/></g>
+                    <g><polygon class="st1" points="187.7 108.1 186.9 107.3 185.8 107.8 186.3 106.7 185.5 105.8 186.7 106 187.3 104.9 187.4 106.2 188.7 106.4 187.6 106.9 187.7 108.1"/><polygon points="187.3 104.9 186.7 106 185.5 105.8 186.3 106.7 185.8 107.8 186.9 107.3 187.7 108.1 187.6 106.9 188.7 106.4 187.4 106.2 187.3 104.9 187.3 104.9"/></g>
+                </svg>
+            </div>
+        </div>
+
         <section id="about" class="section about" data-aos="fade-up" data-aos-delay="400">
             <h2 class="section-title" data-aos="fade-up" data-aos-delay="400">About Me</h2>
             
             <div class="about-wrapper" data-aos="fade-right" data-aos-delay="400">
                 <div class="about-photo">
-                    <img src="images/about/photo-of-me.webp" alt="Photo of Ricky"/>
+                    <img loading="lazy" src="images/about/photo-of-me.webp" alt="Photo of Ricky"/>
                 </div>
                 
                 <div class="about-content" data-aos="fade-left" data-aos-delay="400">
@@ -341,13 +365,15 @@
         </section>
     </div>
 
-    <script src="script/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="script/script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js" defer></script>
     <script>
-        AOS.init();
-        </script>
-        <script src="https://static.elfsight.com/platform/platform.js" async></script>
-        <div class="elfsight-app-b4664b42-998e-4566-927a-6872aeae094d" data-elfsight-app-lazy></div>
+        document.addEventListener("DOMContentLoaded", () => {
+            AOS.init();
+        });
+    </script>
+    <script src="https://static.elfsight.com/platform/platform.js" defer></script>
+    <div class="elfsight-app-b4664b42-998e-4566-927a-6872aeae094d" data-elfsight-app-lazy></div>
 
     <div class="footer-wave">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
