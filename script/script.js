@@ -1,5 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+    const siteHeader = document.querySelector(".site-header");
+
+    // --- FIX: Manage mobile header height for background visibility ---
+    const manageHeaderHeight = () => {
+        if (siteHeader) {
+            if (window.innerWidth < 1024) {
+                // On mobile, set a fixed height so the background is visible.
+                siteHeader.style.height = '5.5rem';
+            } else {
+                // On desktop, remove the inline style to revert to the CSS definition.
+                siteHeader.style.height = '';
+            }
+        }
+    };
+
+    // Run on initial load and on window resize
+    manageHeaderHeight();
+    window.addEventListener('resize', manageHeaderHeight);
+
+
     // --- Skills Tab Filtering ---
     const tabButtons = document.querySelectorAll('.tab-button');
     const skillsGrid = document.getElementById('skills-grid');
@@ -54,10 +74,10 @@ document.addEventListener("DOMContentLoaded", () => {
         sections.forEach(section => observer.observe(section));
     }
 
-    // --- CORRECTED: Mobile overlay menu (open/close) ---
+    // --- Mobile overlay menu (open/close) ---
     const hamburger = document.getElementById('hamburger');
     const mainNav = document.querySelector('.main-nav');
-    const htmlEl = document.documentElement; // Selects the <html> element
+    const htmlEl = document.documentElement;
     const body = document.body;
     const mobileNavLinks = document.querySelectorAll('.main-nav .nav-links a');
 
@@ -65,16 +85,16 @@ document.addEventListener("DOMContentLoaded", () => {
         const closeMenu = () => {
             hamburger.classList.remove('is-active');
             mainNav.classList.remove('active');
-            htmlEl.classList.remove('no-scroll'); // CORRECT: Remove class from <html>
-            body.classList.remove('no-scroll');   // CORRECT: Remove class from <body>
+            htmlEl.classList.remove('no-scroll');
+            body.classList.remove('no-scroll');
             hamburger.setAttribute('aria-expanded', 'false');
         };
 
         const openMenu = () => {
             hamburger.classList.add('is-active');
             mainNav.classList.add('active');
-            htmlEl.classList.add('no-scroll'); // Add class to <html>
-            body.classList.add('no-scroll');   // Add class to <body>
+            htmlEl.classList.add('no-scroll');
+            body.classList.add('no-scroll');
             hamburger.setAttribute('aria-expanded', 'true');
         };
 
@@ -90,7 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (mobileNavLinks.length) {
             mobileNavLinks.forEach(link => {
                 link.addEventListener('click', () => {
-                    closeMenu(); // This correctly calls the function to remove all necessary classes
+                    closeMenu();
                 });
             });
         }
@@ -174,7 +194,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const socialSidebar = document.querySelector(".social-sidebar");
     const footer = document.querySelector(".site-footer");
     const logo = document.querySelector(".logo");
-    const siteHeader = document.querySelector(".site-header");
     
     if (socialSidebar && footer && mainNav && hamburger && logo && siteHeader) {
         const observer = new IntersectionObserver((entries) => {
@@ -198,7 +217,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 logo.style.transition = "opacity 0.5s ease, transform 0.5s ease";
                 
                 if (siteHeader && window.innerWidth < 1024) {
-                    siteHeader.style.background = inView ? "transparent" : "";
+                    siteHeader.style.opacity = fade;
+                    siteHeader.style.transform = `translateY(${slide})`;
+                    siteHeader.style.transition = "opacity 0.5s ease, transform 0.5s ease";
                 }
             });
         }, { threshold: 0.1 });
