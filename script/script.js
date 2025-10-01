@@ -37,44 +37,65 @@ document.addEventListener("DOMContentLoaded", () => {
     const navLinks = document.querySelectorAll('.nav-link');
 
     if (sections.length && navLinks.length) {
-        window.addEventListener('scroll', () => {
-            let current = "";
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (window.pageYOffset >= sectionTop - 150) {
-                    current = section.getAttribute('id');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${id}`) {
+                            link.classList.add('active');
+                        }
+                    });
                 }
             });
+        }, { rootMargin: '-50% 0px -50% 0px' });
 
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
+        sections.forEach(section => observer.observe(section));
     }
 
-    // --- Mobile overlay menu (open/close) ---
+    // --- CORRECTED: Mobile overlay menu (open/close) ---
     const hamburger = document.getElementById('hamburger');
     const mainNav = document.querySelector('.main-nav');
+    const htmlEl = document.documentElement; // Selects the <html> element
     const body = document.body;
     const mobileNavLinks = document.querySelectorAll('.main-nav .nav-links a');
 
     if (hamburger && mainNav && body) {
+        const closeMenu = () => {
+            hamburger.classList.remove('is-active');
+            mainNav.classList.remove('active');
+            htmlEl.classList.remove('no-scroll'); // CORRECT: Remove class from <html>
+            body.classList.remove('no-scroll');   // CORRECT: Remove class from <body>
+            hamburger.setAttribute('aria-expanded', 'false');
+        };
+
+        const openMenu = () => {
+            hamburger.classList.add('is-active');
+            mainNav.classList.add('active');
+            htmlEl.classList.add('no-scroll'); // Add class to <html>
+            body.classList.add('no-scroll');   // Add class to <body>
+            hamburger.setAttribute('aria-expanded', 'true');
+        };
+
         hamburger.addEventListener('click', () => {
-            mainNav.classList.toggle('active');
-            body.classList.toggle('no-scroll');
+            const isActive = mainNav.classList.contains('active');
+            if (isActive) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
         });
-    }
-    if (mobileNavLinks.length) {
-        mobileNavLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mainNav.classList.remove('active');
-                body.classList.remove('no-scroll');
+
+        if (mobileNavLinks.length) {
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    closeMenu(); // This correctly calls the function to remove all necessary classes
+                });
             });
-        });
+        }
     }
+
 
     // --- Project Accordion Functionality ---
     const accordionItems = document.querySelectorAll('.accordion-item');
@@ -119,9 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
             accordionItems.forEach(item => {
                 const header = item.querySelector('.accordion-header');
                 if (header) {
-                    // Attach listeners to the HEADER, not the whole item
                     header.addEventListener('mouseenter', (e) => {
-                        // Get the image URL from the parent accordion item
                         const imageUrl = item.getAttribute('data-preview-image');
                         if (imageUrl) {
                             projectPreviewImage.src = imageUrl;
@@ -178,7 +197,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 logo.style.transform = `translateY(${slide})`;
                 logo.style.transition = "opacity 0.5s ease, transform 0.5s ease";
                 
-                if (siteHeader && window.innerWidth < 768) {
+                if (siteHeader && window.innerWidth < 1024) {
                     siteHeader.style.background = inView ? "transparent" : "";
                 }
             });

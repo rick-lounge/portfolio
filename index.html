@@ -21,12 +21,13 @@
     <div class="cursor-follower"></div>
     <header class="site-header">
         <div class="nav-container">
-            <div class="hamburger" id="hamburger" aria-label="Toggle navigation menu">
-                <img src="images/hamburger-icon.svg" alt="Menu"/>
-            </div>
+            <button class="hamburger" id="hamburger" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-nav">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
             
-            
-            <nav class="main-nav" aria-label="Primary">
+            <nav class="main-nav" id="main-nav" aria-label="Primary">
                 <ul class="nav-links">
                     <li><a href="#home" class="nav-link active"><span class="nav-line"></span>Home</a></li>
                     <li><a href="#projects" class="nav-link"><span class="nav-line"></span>Projects</a></li>
@@ -73,7 +74,7 @@
     <section id="projects" class="section projects" data-aos="fade-up" data-aos-delay="400">
         <h2 class="section-title">Projects</h2>
         <div class="project-accordion">
-            <div class="accordion-item" data-preview-image="images/projects/nails-by-asmarayah.png">
+            <div class="accordion-item" data-preview-image="images/projects/nails-by-asmarayah.webp">
                 <button class="accordion-header" aria-expanded="false">
                     <span class="accordion-title">Nails by Asmarayah - Static Website</span>
                     <span class="accordion-icon"></span>
@@ -81,7 +82,7 @@
                 <div class="accordion-content" aria-hidden="true">
                     <div class="project-content-inner">
                         <div class="project-image">
-                            <img src="images/projects/nails-by-asmarayah.png" alt="Nails by Asmarayah project preview" />
+                            <img src="images/projects/nails-by-asmarayah.webp" alt="Nails by Asmarayah project preview" />
                         </div>
                         <div class="project-info">
                             <p class="project-description">An experimental promo site built as a barter collaboration. I designed and built a fast static site with an SVG-masked hero image, CSS view-timeline text wipes, and buttery smooth scrolling. The gallery is WebP + lazy-loaded, and there's a handy copy-to-book CTA.</p>
