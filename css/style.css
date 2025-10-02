@@ -8,6 +8,110 @@
     --accent-hover: #730d0252;
 }
 
+/* --- PRELOADER STYLES --- */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-color);
+    background-image: url("https://www.transparenttextures.com/patterns/egg-shell.png");
+    transition: opacity 0.75s ease, visibility 0.75s ease;
+    transition-delay: 0.2s;
+
+}
+
+.preloader--hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.preloader-logo {
+    width: 150px;
+    height: auto;
+}
+
+.preloader-logo path {
+    stroke-dasharray: 3000;
+    stroke-dashoffset: 3000;
+    fill-opacity: 0;
+    animation: 
+        draw-in 1.5s ease-out forwards,
+        fill-in 0.8s ease-out forwards 1.2s;
+}
+
+.preloader-logo .st0 {
+    stroke: #1b2023;
+    fill: #1b2023;
+}
+
+.preloader-logo .st1 {
+    stroke: #761409;
+    fill: #761409;
+}
+
+@keyframes draw-in {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes fill-in {
+    from {
+        fill-opacity: 0;
+    }
+    to {
+        fill-opacity: 1;
+    }
+}
+
+/* Preloader text */
+
+.preloader-text {
+    margin-top: 1rem;
+    font-family: 'Space Mono', monospace;
+    font-size: 1rem;
+    color: var(--text-color);
+    letter-spacing: 2px;
+}
+
+.preloader-text span {
+    display: inline-block;
+    animation: jump 1.4s infinite;
+}
+
+/* Stagger the animation for each dot to create the wave effect */
+.preloader-text span:nth-of-type(2) {
+    animation-delay: 0.1s;
+}
+
+.preloader-text span:nth-of-type(3) {
+    animation-delay: 0.2s;
+}
+
+@keyframes jump {
+    0% {
+        transform: translateY(0);
+    }
+    20% {
+        transform: translateY(-6px);
+    }
+    40% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Start of the site */
+
 html {
     font-size: 100%; 
     scroll-behavior: smooth;
@@ -37,10 +141,12 @@ img {
     display: block;
 }
 
+/* Cursor follower */
+
 .cursor-follower {
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 0%;
+    left: 0%;
     width: 35px;
     height: 35px;
     border-radius: 50%;
@@ -48,7 +154,6 @@ img {
     pointer-events: none;
     transform: translate(-50%, -50%);
     z-index: 9999;
-    transition: transform 0.1s ease;
 }
 
 @media (max-width: 1023px) {
@@ -336,7 +441,6 @@ img {
 /* Section Layout */
 .section {
     margin: 3rem 1.5rem;
-    min-height: 100vh;
 }
 
 @media (min-width: 1024px) {
@@ -558,7 +662,7 @@ img {
     font-family: 'Caveat', cursive;
     font-size: 1.4rem;
     color: var(--text-color);
-    font-weight: 600;
+    font-weight: 700;
     transition: color 0.3s ease;
 }
 
@@ -941,14 +1045,14 @@ img {
 /* On desktop, we apply the same margins as the .section */
 @media (min-width: 64em) {
     .star-divider-container {
-        width: auto; /* Allow margin to take effect */
-        margin: 0 220px; /* Aligns with your .section margin */
+        width: auto;
+        margin: 0 220px;
     }
 }
 
 /* ABOUT SECTION */
 .about {
-    padding: 4rem 1.5rem;
+    padding: 3rem 1.5rem;
 }
 
 .about-wrapper {
@@ -1019,6 +1123,17 @@ img {
     font-family: 'Space Mono', monospace;
     color: var(--text-color);
     line-height: 1.7;
+}
+
+.hobby-descriptions strong {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Creates space between icon and text */
+}
+
+.hobby-icon {
+    width: 24px;  /* Adjust size as needed */
+    height: 24px; /* Adjust size as needed */
 }
 
 .hobby-descriptions ul {

@@ -1,5 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // --- Preloader ---
+    const preloader = document.querySelector('.preloader');
+    if (preloader) {
+        const loadPromise = new Promise(resolve => {
+            window.addEventListener('load', resolve);
+        });
+        const minTimePromise = new Promise(resolve => {
+            setTimeout(resolve, 2000); // Waits for 2 seconds
+        });
 
+        Promise.all([loadPromise, minTimePromise]).then(() => {
+            preloader.classList.add('preloader--hidden');
+        });
+    }
+        
     const siteHeader = document.querySelector(".site-header");
 
     // --- Manage mobile header height for background visibility ---
@@ -23,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const skillsGrid = document.getElementById('skills-grid');
     const allSkillItems = document.querySelectorAll('.skill-item');
 
-    // --- NEW: Function to move the slider ---
+    // --- Function to move the slider ---
     const moveSlider = () => {
         const activeButton = document.querySelector('.tab-button.active');
         if (tabsContainer && activeButton) {
@@ -133,7 +147,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     // --- Project Accordion Functionality ---
-// --- Project Accordion Functionality & Accessibility Fix ---
 const accordionItems = document.querySelectorAll('.accordion-item');
 
 if (accordionItems.length) {
@@ -214,14 +227,79 @@ if (accordionItems.length) {
         }
     }
 
-    // --- Custom Cursor Follower ---
-    const follower = document.querySelector('.cursor-follower');
+// --- FINAL: Advanced Cursor with Smooth Scale and Sway Effect ---
+const follower = document.querySelector('.cursor-follower');
 
-    if (follower && !('ontouchstart' in window)) {
-        window.addEventListener('mousemove', e => {
-            follower.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+if (follower && !('ontouchstart' in window) && window.matchMedia('(hover: hover)').matches) {
+    // Position variables
+    let mouseX = 0;
+    let mouseY = 0;
+    let followerX = 0;
+    let followerY = 0;
+    let prevFollowerX = 0;
+    let prevFollowerY = 0;
+    
+    // Scale variables
+    let currentScale = 1;
+    let targetScale = 1;
+
+    const speed = 0.1; // Controls the "lag" of the tail
+
+    window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+
+    const animateFollower = () => {
+        // Smoothly move the follower towards the mouse (lerp)
+        followerX += (mouseX - followerX) * speed;
+        followerY += (mouseY - followerY) * speed;
+
+        // Calculate velocity and angle for the sway effect
+        const deltaX = followerX - prevFollowerX;
+        const deltaY = followerY - prevFollowerY;
+        prevFollowerX = followerX;
+        prevFollowerY = followerY;
+        const velocity = Math.min(Math.sqrt(deltaX**2 + deltaY**2) * 4, 150);
+        const angle = Math.atan2(deltaY, deltaX) * 180 / Math.PI;
+
+        // Calculate the stretch factor for the sway effect
+        const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+        const stretch = clamp(velocity / 30, 1, 1.5);
+
+        // Smoothly animate the scale towards the target scale (for hover)
+        currentScale += (targetScale - currentScale) * speed;
+
+        // Apply all transforms: position, rotation, sway, and hover scale
+        follower.style.transform = `
+            translate(${followerX - follower.offsetWidth / 2}px, ${followerY - follower.offsetHeight / 2}px) 
+            rotate(${angle}deg) 
+            scaleX(${stretch * currentScale}) 
+            scaleY(${(2 - stretch) * currentScale})
+        `;
+        
+        requestAnimationFrame(animateFollower);
+    };
+
+    animateFollower();
+
+    // Handle setting the target scale on hover
+    const clickableElements = document.querySelectorAll(
+        'a, button, .tab-button, .accordion-header'
+    );
+
+    clickableElements.forEach(el => {
+        el.addEventListener('mouseenter', () => {
+            targetScale = 1.5; // Set target to expand
         });
-    }
+        el.addEventListener('mouseleave', () => {
+            targetScale = 1; // Set target to shrink back
+        });
+    });
+
+} else if (follower) {
+    follower.style.display = 'none';
+}
 
     // --- Scroll-triggered Star Rotation ---
     const starLeft = document.getElementById('star-left');
