@@ -6,13 +6,15 @@ document.addEventListener("DOMContentLoaded", () => {
             window.addEventListener('load', resolve);
         });
         const minTimePromise = new Promise(resolve => {
-            setTimeout(resolve, 2000); // Waits for 2 seconds
+            setTimeout(resolve, 2000); 
         });
 
         Promise.all([loadPromise, minTimePromise]).then(() => {
             preloader.classList.add('preloader--hidden');
         });
     }
+
+    // --- Site Header ---
         
     const siteHeader = document.querySelector(".site-header");
 
@@ -227,7 +229,7 @@ if (accordionItems.length) {
         }
     }
 
-// --- FINAL: Advanced Cursor with Smooth Scale and Sway Effect ---
+// --- Advanced Cursor with Smooth Scale and Sway Effect ---
 const follower = document.querySelector('.cursor-follower');
 
 if (follower && !('ontouchstart' in window) && window.matchMedia('(hover: hover)').matches) {
@@ -243,7 +245,7 @@ if (follower && !('ontouchstart' in window) && window.matchMedia('(hover: hover)
     let currentScale = 1;
     let targetScale = 1;
 
-    const speed = 0.1; // Controls the "lag" of the tail
+    const speed = 0.1;
 
     window.addEventListener('mousemove', (e) => {
         mouseX = e.clientX;
@@ -251,7 +253,7 @@ if (follower && !('ontouchstart' in window) && window.matchMedia('(hover: hover)
     });
 
     const animateFollower = () => {
-        // Smoothly move the follower towards the mouse (lerp)
+        // Smoothly move the follower towards the mouse
         followerX += (mouseX - followerX) * speed;
         followerY += (mouseY - followerY) * speed;
 
@@ -267,7 +269,7 @@ if (follower && !('ontouchstart' in window) && window.matchMedia('(hover: hover)
         const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
         const stretch = clamp(velocity / 30, 1, 1.5);
 
-        // Smoothly animate the scale towards the target scale (for hover)
+        // Smoothly animate the scale towards the target scale
         currentScale += (targetScale - currentScale) * speed;
 
         // Apply all transforms: position, rotation, sway, and hover scale
@@ -290,10 +292,10 @@ if (follower && !('ontouchstart' in window) && window.matchMedia('(hover: hover)
 
     clickableElements.forEach(el => {
         el.addEventListener('mouseenter', () => {
-            targetScale = 1.5; // Set target to expand
+            targetScale = 1.5;
         });
         el.addEventListener('mouseleave', () => {
-            targetScale = 1; // Set target to shrink back
+            targetScale = 1; 
         });
     });
 
@@ -301,23 +303,23 @@ if (follower && !('ontouchstart' in window) && window.matchMedia('(hover: hover)
     follower.style.display = 'none';
 }
 
-    // --- Scroll-triggered Star Rotation ---
-    const starLeft = document.getElementById('star-left');
-    const starRight = document.getElementById('star-right');
-    
-    // Only run this on devices that aren't touch-based for performance
-    if (starLeft && starRight && !('ontouchstart' in window)) {
-        window.addEventListener('scroll', () => {
-            // The value '2' controls the speed. Increase for slower, decrease for faster.
-            const rotation = window.scrollY / 2;
-            
-            // Use requestAnimationFrame for smoother animation
-            window.requestAnimationFrame(() => {
-                document.documentElement.style.setProperty('--scroll-rotate', rotation + 'deg');
-            });
-        });
-    }
+// --- Scroll-triggered Star Rotation ---
+const starLeft = document.getElementById('star-left');
+const starRight = document.getElementById('star-right');
 
+if (starLeft && starRight) {
+    window.addEventListener('scroll', () => {
+        // The value '2' controls the speed. 
+        const rotation = window.scrollY / 2;
+        
+        // Use requestAnimationFrame for smoother animation
+        window.requestAnimationFrame(() => {
+            document.documentElement.style.setProperty('--scroll-rotate', rotation + 'deg');
+        });
+    }, { passive: true }); // for better scroll performance
+}
+
+    
     // --- Hide Nav/Sidebar when Footer is in View ---
     const socialSidebar = document.querySelector(".social-sidebar");
     const footer = document.querySelector(".site-footer");
@@ -354,4 +356,63 @@ if (follower && !('ontouchstart' in window) && window.matchMedia('(hover: hover)
 
         observer.observe(footer);
     }
+
+    // --- ANIMATED CANVAS GRAIN ---
+const grain = () => {
+    const canvas = document.getElementById('grain-canvas');
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    let wWidth, wHeight;
+    let noiseData = [];
+    let frame = 0;
+    let loopTimeout;
+
+    const createNoise = () => {
+        const idata = ctx.createImageData(wWidth, wHeight);
+        const buffer32 = new Uint32Array(idata.data.buffer);
+        const len = buffer32.length;
+
+        for (let i = 0; i < len; i++) {
+            if (Math.random() < 0.5) {
+                buffer32[i] = 0xff000000;
+            }
+        }
+        noiseData.push(idata);
+    };
+
+    const setup = () => {
+        wWidth = window.innerWidth;
+        wHeight = window.innerHeight;
+        canvas.width = wWidth;
+        canvas.height = wHeight;
+        noiseData = [];
+        for (let i = 0; i < 10; i++) {
+            createNoise();
+        }
+        loop();
+    };
+
+    const loop = () => {
+        frame = (frame + 1) % 10;
+        ctx.putImageData(noiseData[frame], 0, 0);
+        loopTimeout = window.setTimeout(() => {
+            requestAnimationFrame(loop);
+        }, 1000 / 25); // 25 frames per second
+    };
+
+    const reset = () => {
+        window.addEventListener('resize', () => {
+            window.clearTimeout(loopTimeout);
+            setup();
+        });
+    };
+
+    setup();
+    reset();
+};
+
+// Run the grain effect after the page is loaded
+window.addEventListener('load', grain);
 });
+
